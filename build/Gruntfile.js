@@ -64,7 +64,7 @@ module.exports = function (grunt)
 				},
 				files: {
 					'../deploy/css/style.css' : '../src/bootstrap/index.less',
-					'../deploy/css/pattern.css' : '../lib/lhs/pattern/pattern.less',
+					'../deploy/css/pattern.css' : '../lib/dfwp_pattern/pattern.less',
 				}
 			},
 			dist: {
