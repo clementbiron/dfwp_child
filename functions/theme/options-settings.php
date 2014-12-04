@@ -10,7 +10,7 @@
 	/********************************
 	 * CUSTOM MENUS
 	 */
-/*	register_nav_menus( array(
+	/*	register_nav_menus( array(
         'menu-header' => 'Navigation principale',
         'menu-footer' => 'Navigation en pied de page'
     ) );

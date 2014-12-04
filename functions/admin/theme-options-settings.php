@@ -4,6 +4,41 @@
  * Theme option settings
  */
 
+//Rétirer les accents des fichiers uplodés
+add_filter( 'sanitize_file_name', 'remove_accents' );
+
+//Autoriser d'autre formats d'upload
+function addMimeTypes( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'addMimeTypes' );
+
+//Changer les options de formats de textes dans tinymce
+function customTinymce($init) {
+
+	//On enlève le h1
+	$init['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5';
+	return $init;
+}
+add_filter('tiny_mce_before_init', 'customTinymce' );
+
+//Afficher le bloc Yoast en bas
+function yoastBottom() {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoastBottom');
+
+//Afficher par défauts les 2 lignes de tinymce
+function dfwpEnhanceEditor($in) {
+	$in['wordpress_adv_hidden'] = FALSE;
+	return $in;
+}
+add_filter('tiny_mce_before_init', 'dfwpEnhanceEditor');
+
+//Supprimer le bouton pour obtenir le lien court
+add_filter('pre_get_shortlink','__return_empty_string');
+
 //On désactive l'éditeur pour certains templates de pages
 /*Admin::hideEditorForPagesTemplates(array('page-templates/histoire.php',
 										'page-templates/activites.php',
