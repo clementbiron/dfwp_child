@@ -7,34 +7,43 @@
 //Rétirer les accents des fichiers uplodés
 add_filter( 'sanitize_file_name', 'remove_accents' );
 
+//Supprimer	la ponctuation française des noms de fichiers
+add_filter( 'sanitize_file_name_chars', 'sanitize_file_name_chars', 10, 1 );
+function sanitize_file_name_chars( $special_chars = array() ) {
+	$special_chars = array_merge( array( '’', '‘', '“', '”', '«', '»', '‹', '›', '—', 'æ', 'œ', '€' ), $special_chars );
+	return $special_chars;
+}
+
 //Autoriser d'autre formats d'upload
+add_filter( 'upload_mimes', 'addMimeTypes' );
 function addMimeTypes( $mimes ){
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 }
-add_filter( 'upload_mimes', 'addMimeTypes' );
 
 //Changer les options de formats de textes dans tinymce
+add_filter('tiny_mce_before_init', 'customTinymce' );
 function customTinymce($init) {
 
 	//On enlève le h1
 	$init['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5';
 	return $init;
 }
-add_filter('tiny_mce_before_init', 'customTinymce' );
 
 //Afficher le bloc Yoast en bas
+add_filter( 'wpseo_metabox_prio', 'yoastBottom');
 function yoastBottom() {
 	return 'low';
 }
-add_filter( 'wpseo_metabox_prio', 'yoastBottom');
+
 
 //Afficher par défauts les 2 lignes de tinymce
+add_filter('tiny_mce_before_init', 'dfwpEnhanceEditor');
 function dfwpEnhanceEditor($in) {
 	$in['wordpress_adv_hidden'] = FALSE;
 	return $in;
 }
-add_filter('tiny_mce_before_init', 'dfwpEnhanceEditor');
+
 
 //Supprimer le bouton pour obtenir le lien court
 add_filter('pre_get_shortlink','__return_empty_string');
