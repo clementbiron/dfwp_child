@@ -17,6 +17,8 @@ function sanitize_file_name_chars( $special_chars = array() ) {
 //Autoriser d'autre formats d'upload
 add_filter( 'upload_mimes', 'addMimeTypes' );
 function addMimeTypes( $mimes ){
+
+	//Autoriser le svg
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 }
@@ -43,7 +45,6 @@ function dfwpEnhanceEditor($in) {
 	$in['wordpress_adv_hidden'] = FALSE;
 	return $in;
 }
-
 
 //Supprimer le bouton pour obtenir le lien court
 add_filter('pre_get_shortlink','__return_empty_string');
