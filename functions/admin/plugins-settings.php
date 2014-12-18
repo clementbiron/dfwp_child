@@ -33,6 +33,13 @@ function my_theme_register_required_plugins() {
             'required'  => false,
         ),
 
+        //Wordfence
+        array(
+            'name' => 'Wordfence Security',
+            'slug' => 'wordfence',
+            'requiered' => false
+        ),
+
         //ACF
         array(
             'name'      => 'Advanced Custom Fields',
