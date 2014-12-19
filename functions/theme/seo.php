@@ -1,7 +1,11 @@
 <?php
-	/***
-	 * Custom SEO
+
+	/*******************************
+	 * GESTION SEO CUSTOM
 	 */
+
+	use Doublefou\Helper\Seo;
+
 	class SeoCustom extends Seo
 	{
 		public static function getTitle()
@@ -28,6 +32,6 @@
 			return $r;
 		}
 	}
-	
+
 	SeoCustom::getInstance();
 ?>

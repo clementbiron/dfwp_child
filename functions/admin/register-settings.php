@@ -1,7 +1,7 @@
 <?php 
 
 	/*******************************
-	 * ADMIN OPTION PAGE
+	 * GESTION DE LA PAGE D'OPTIONS DFWP
 	 */
 	
 	//A l'initialisation de l'administration

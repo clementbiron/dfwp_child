@@ -1,19 +1,28 @@
-<?php	
-	/**
-	 * En mode debug
+<?php
+	
+	/*******************************
+	 * GESTION CORE
 	 */
+
+	use Doublefou\Core\Debug;
+	use Doublefou\Core\Config;
+	use Doublefou\Helper\Login;
+
+	//Si on a configurer le mode debug dans l'option page
 	if(get_option('debug_mode') == 'debug' || get_option('debug_mode') == false){
 
-		//On initialise l'affichage des erreurs php
-		Debug::showErrors();
-		
-		//Affichage d'infos WP
-		Debug::getWpInfo();
+		//On passe en mode debug
+		Config::setMode('debug');
 	}
 
-	/**
-	 * Activation du mode de maintenance
-	 */
+	//Si on a configurer le mode prod dans l'option page
+	else if(get_option('debug_mode') == 'prod'){
+
+		//On passe en mode prod
+		Config::setMode('prod');
+	}
+
+	//En mode maintenance
 	if(get_option('maintenance_mode') == 'true'){
 		
 		//Si on est pas sur l'admin, qu'on est pas un utilisateur connecté ou que l'on est pas sur la page de login

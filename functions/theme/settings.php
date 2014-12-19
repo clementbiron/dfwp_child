@@ -1,13 +1,22 @@
 <?php
-	/*******************************
-	 * CUSTOM POST TYPE AND TAXONOMY
-	 */
 
 	/*******************************
+	 * GESTION DE LA CONFIGURATION DU THEME
+	 */
+	
+	use Doublefou\Helper\Theme;
+
+	//On cache l'admin bar sur le front
+	Theme::hideAdminBar();
+
+	//On clean le head
+	Theme::cleanHeader();
+
+	/**************
 	 * REWRITE RULES
 	 */
 	
-	/********************************
+	/**************
 	 * CUSTOM MENUS
 	 */
 	/*	register_nav_menus( array(
@@ -16,11 +25,7 @@
     ) );
 	*/
 	
-	/********************************
-	 * THEME OPTIONS PAGE
-	 */
-	
-	/************************
+	/**************
 	 * CUSTOM MAIN QUERY 
 	 */
 	 add_action('pre_get_posts', 'customMainQuery',5 );
@@ -36,12 +41,6 @@
 		return $pQuery;
 	 }
 	
-	/********************************
-	 * Divers
-	 */
-
-	//On cache l'admin bar sur le front
-	Admin::hideAdminBar();
 
 	//On supprime le lien rss dans le header
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
