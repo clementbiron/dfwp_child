@@ -26,13 +26,7 @@
 	Admin::makeTinyMceTwoLines();
 
 	//Supprimer le bouton pour obtenir le lien court
-	Admin::deleteShortLinkBtn();
-
-	//Afficher le bloc Yoast en bas
-	add_filter( 'wpseo_metabox_prio', 'yoastBottom');
-	function yoastBottom() {
-		return 'low';
-	}
+	Admin::deleteShortLinkBtn();	
 	
 	//Cacher certains menus de gauche pour l'éditeur
 	Admin::hideMenu(
@@ -79,4 +73,10 @@
 											'page-templates/contact.php',
 
 	));*/
+
+	//Afficher le bloc Yoast en bas
+	add_filter( 'wpseo_metabox_prio', 'yoastBottom');
+	function yoastBottom() {
+		return 'low';
+	}
 ?>
