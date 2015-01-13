@@ -5,7 +5,7 @@
      */
 
     //Include the TGM_Plugin_Activation class.
-    require_once get_template_directory() . '/doublefou/libs/TGM-Plugin-Activation-master/class-tgm-plugin-activation.php';
+    require_once get_template_directory() . '/Doublefou/libs/TGM-Plugin-Activation-master/class-tgm-plugin-activation.php';
 
     /**
      * Register the required plugins for this theme.
