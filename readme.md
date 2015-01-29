@@ -10,6 +10,8 @@
 
  
 ----------
+#### NPM INSTALL
+npm install --save-dev
 
 #### BUILD
 Se mettre dans le dossier build
