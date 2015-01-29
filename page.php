@@ -2,7 +2,7 @@
 	get_header();
 ?>
 
-index of dfwp_child
+page of dfwp_child
 
 <?php 
 	if ( have_posts() ) : 
@@ -11,6 +11,7 @@ index of dfwp_child
 		endwhile;  
 	endif; 
 ?>
+
 
 <?php
 	get_footer();

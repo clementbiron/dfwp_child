@@ -27,24 +27,24 @@
 	 * CUSTOM MENUS
 	 */
 	/*	register_nav_menus( array(
-        'menu-header' => 'Navigation principale',
-        'menu-footer' => 'Navigation en pied de page'
-    ) );
+		'menu-header' => 'Navigation principale',
+		'menu-footer' => 'Navigation en pied de page'
+	) );
 	*/
 	
 	/**************
 	 * CUSTOM MAIN QUERY 
 	 */
-	 add_action('pre_get_posts', 'customMainQuery',5 );
-	 function customMainQuery($pQuery)
-	 {
-	 	//Sur la page d'accueil
-	 	if(is_home() && $pQuery->is_main_query() ){
-	 		
+	add_action('pre_get_posts', 'customMainQuery',5 );
+	function customMainQuery($pQuery)
+	{
+		//Sur la page d'accueil
+		if(is_home() && $pQuery->is_main_query() ){
+			
 			//On récupere uniquement les établissements
 			//$pQuery->set( 'post_type', array( 'etablissement') );
-	 	}
+		}
 		
 		return $pQuery;
-	 }
+	}
 ?>
