@@ -6,6 +6,8 @@
 	
 	use Doublefou\Helper\Theme;
 	use Doublefou\Helper\Seo;
+	use Doublefou\Helper\Yoast;
+	use Doublefou\Core\Debug;
 
 	//On cache l'admin bar sur le front
 	Theme::hideAdminBar();
@@ -16,8 +18,8 @@
 	//Gestion titre et description
 	Seo::initHeader();
 
-	//Supprimer le footer Yoast
-	Seo::removeYoastFooter();
+	//Supprimer le footer yoast
+	Yoast::removeFooter();
 
 	/**************
 	 * REWRITE RULES

@@ -5,6 +5,9 @@
 	 */
 	
 	use Doublefou\Helper\Admin;
+	use Doublefou\Core\Debug;
+	use Doublefou\Helper\Page;
+	use Doublefou\Helper\Yoast;
 	
 	//Retirer les accents des fichiers uploadés
 	Admin::removeAccentsToUploadFiles();
@@ -22,8 +25,11 @@
 	//Modifier les formats authorisés dans tinymce
 	Admin::modifyTinyMceBlockFormat('Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5');
 
-	//Passer TinyMce sur 2 lignes
-	Admin::makeTinyMceTwoLines();
+	//On configure les outils tinyce
+	//On les mets tous sur la même toolbar
+	//Et on onlève les outil de la deuxieme toolbar
+	Admin::modifyTinyMceToolbar(1,"formatselect,bold,italic,underline,strikethrough,bullist,link,unlink,pastetext,removeformat,charmap,undo,redo,fullscreen");
+	Admin::modifyTinyMceToolbar(2,"");
 
 	//Supprimer le bouton pour obtenir le lien court
 	Admin::deleteShortLinkBtn();	
@@ -63,20 +69,38 @@
 		)
 	);
 
-	//On désactive l'éditeur pour certains templates de pages
-	/*Admin::hideEditorForPagesTemplates(array('page-templates/histoire.php',
-											'page-templates/activites.php',
-											'page-templates/accueil.php',	
-											'page-templates/cafe.php',						
-											'page-templates/hotel.php',
-											'page-templates/restaurant.php',
-											'page-templates/contact.php',
+	//Passer le bloc yoast en bas
+	Yoast::goBottom();
 
-	));*/
+	//Brancher yoast sur acf
+	Yoast::makeACFFriendly();
 
-	//Afficher le bloc Yoast en bas
-	add_filter( 'wpseo_metabox_prio', 'yoastBottom');
-	function yoastBottom() {
-		return 'low';
+	//On masque la page pattern pour les roles à partir de editor
+	Page::hideInAdminByPageTemplate('page-pattern.php','activate_plugins');
+
+	//On ajoute une configuration Tinymce pour ACF
+	add_filter('acf/fields/wysiwyg/toolbars','acfToolbars' );
+	function acfToolbars($toolbars)
+	{
+		// Add a new toolbar called "Very Simple"
+		// - this toolbar has only 1 row of buttons
+		$toolbars['DFWP Tools' ] = array();
+		$toolbars['DFWP Tools' ][1] = array(
+			'bold', 
+			'italic', 
+			'underline',
+			'strikethrough',
+			'bullist',
+			'formatselect',
+			'link',
+			'unlink',
+			'pastetext',
+			'removeformat',
+			'charmap',
+			'fullscreen',
+		);
+
+		// return $toolbars - IMPORTANT!
+		return $toolbars;
 	}
 ?>
