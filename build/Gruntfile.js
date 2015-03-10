@@ -81,7 +81,7 @@ module.exports = function (grunt)
 		},
 		autoprefixer: {
 			options: {
-				browsers: ['last 2 versions']
+				browsers: ['last 2 versions',"> 5%", "Explorer 9", "Android 4"]
 			},
 			dist: {
 				expand: true,
