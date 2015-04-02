@@ -14,12 +14,26 @@
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/img/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/img/favicon.gif" type="image/gif" />
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/img/favicon.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/deploy/css/maintenance.css" />
 	<meta name="Author" content="Clément Biron" />
 	<meta name="Robots" content="all" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<?php 
+		//IE 6, 7, 8, 9 message
+		if((strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE) ||  
+			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 7.') !== FALSE) || 
+			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8.') !== FALSE) || 
+			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 9.') !== FALSE)){
+			echo '<div class="dfwp_warningIE">';
+				echo '<h2>Votre navigateur est obsolète</h2>';
+				echo '<p>Vous risquez de ne pas pouvoir profiter pleinement de la navigation sur ce site.</p>';
+				echo '<p>Procédez à une mise à jour de votre <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx"><u>nagivateur</u></a> ou <a href="https://www.mozilla.org/fr/firefox/new/"><u>changez en</u></a>.</p>';
+			echo '</div>';
+		}
+	?>
 	<h1>Maintenance en cours.</h1>
 </body>
 </html>

@@ -156,5 +156,8 @@ Template Name: Pattern template
 
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/deploy/js/script.js"></script>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/deploy/js/pattern.js"></script>
+		<script type="text/javascript">
+			DFWP_Bootstrap.init();
+		</script>
 	</body>
 </html>

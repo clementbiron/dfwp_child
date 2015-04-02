@@ -26,3 +26,17 @@
 	 ?>
 </head>
 <body class="<?php echo join(' ', get_body_class()); ?>">
+
+	<?php 
+		//IE 6, 7, 8, 9 message
+		if((strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE) ||  
+			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 7.') !== FALSE) || 
+			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8.') !== FALSE) || 
+			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 9.') !== FALSE)){
+			echo '<div class="dfwp_warningIE">';
+				echo '<h2>Votre navigateur est obsolète</h2>';
+				echo '<p>Vous risquez de ne pas pouvoir profiter pleinement de la navigation sur ce site.</p>';
+				echo '<p>Procédez à une mise à jour de votre <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx"><u>nagivateur</u></a> ou <a href="https://www.mozilla.org/fr/firefox/new/"><u>changez en</u></a>.</p>';
+			echo '</div>';
+		}
+	?>

@@ -63,6 +63,7 @@ module.exports = function (grunt)
 				files: {
 					'../deploy/css/style.css' : '../src/bootstrap/index.less',
 					'../deploy/css/pattern.css' : '../lib/dfwp_pattern/pattern.less',
+					'../deploy/css/maintenance.css' : '../src/common/layout/maintenance.less',
 				}
 			},
 			dist: {
@@ -86,15 +87,16 @@ module.exports = function (grunt)
 			dist: {
 				expand: true,
 				flatten: true,
-				src: '../deploy/*.css',
-				dest: '../deploy/'
+				src: '../deploy/css/*.css',
+				dest: '../deploy/css/'
 			}
 		},
 		watch: {
 			style: {
 				files: [
 					'../lib/**/*.less',
-					'../src/**/*.less'
+					'../src/**/*.less',
+					'../src/**/**/*.less'
 				],
 				tasks: ['style']
 			},
