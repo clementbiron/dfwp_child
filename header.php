@@ -11,9 +11,9 @@
 
 <head>
 	<title><?php wp_title( '-', true, 'right' ); ?></title>
-	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/img/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/img/favicon.gif"  type="image/gif" />
-	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/img/favicon.png"   type="image/png" />
+	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.gif"  type="image/gif" />
+	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.png"   type="image/png" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/deploy/css/style.css" />			
 	<meta name="Author" content="Clément Biron" />
 	<meta name="Robots" content="all" />
