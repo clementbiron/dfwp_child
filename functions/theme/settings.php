@@ -1,4 +1,7 @@
 <?php
+	
+	//Exit si accès direct
+	if (!defined('ABSPATH')) exit; 
 
 	/*******************************
 	 * GESTION DE LA CONFIGURATION DU THEME
