@@ -2,9 +2,9 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9 ie8"> <![endif]-->
-<!--[if IE 9]>         <html class="no-js lt-ie10 lt-ie9 ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10 ie9"> <![endif]-->
 <?php if (stripos($_SERVER['HTTP_USER_AGENT'], 'MSIE 10')): ?>
-	<html class="no-js lt-ie10 ie10">
+	<html class="no-js ie10">
 <?php else: ?>
 	<html class="no-js">
 <?php endif; ?>
@@ -21,19 +21,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<?php 
-		//IE 6, 7, 8, 9 message
-		if((strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE) ||  
-			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 7.') !== FALSE) || 
-			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8.') !== FALSE) || 
-			(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 9.') !== FALSE)){
-			echo '<div class="dfwp_warningIE">';
-				echo '<h2>Votre navigateur est obsolète</h2>';
-				echo '<p>Vous risquez de ne pas pouvoir profiter pleinement de la navigation sur ce site.</p>';
-				echo '<p>Procédez à une mise à jour de votre <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx"><u>nagivateur</u></a> ou <a href="https://www.mozilla.org/fr/firefox/new/"><u>changez en</u></a>.</p>';
-			echo '</div>';
-		}
-	?>
 	<h1>Maintenance en cours.</h1>
+	<div class="dfwp_warningIE" id="dfwp_warningIE">
+			<div class="dfwp_warningIE_bg"></div>
+		<div class="dfwp_warningIE_msg">				
+			<h2>Votre navigateur est obsolète</h2>
+			<p>Vous risquez de ne pas pouvoir profiter pleinement de la navigation sur ce site.
+			Procédez à une mise à jour de votre <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx"><u>nagivateur</u></a> ou <a href="https://www.mozilla.org/fr/firefox/new/"><u>changez en</u></a>.</p>
+			<p onclick="document.getElementById('dfwp_warningIE').style.display = 'none';"><strong>Cliquez ici pour continuer sur le site</strong></p>
+		</div>
+	</div>
 </body>
 </html>
