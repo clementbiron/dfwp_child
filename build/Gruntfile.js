@@ -98,14 +98,20 @@ module.exports = function (grunt)
 					'../src/**/*.less',
 					'../src/**/**/*.less'
 				],
-				tasks: ['style']
+				tasks: ['style'],
+				options: {
+			      livereload: true,
+			    }
 			},
 			script: {
 				files: [
 					'../lib/**/*.js',
 					'../src/**/*.js'
 				],
-				tasks: ['script']
+				tasks: ['script'],
+				options: {
+			      livereload: true,
+			    }
 			}
 		}
 	});
