@@ -1,6 +1,14 @@
 <?php
-/*
-Template Name: Accueil template
-*/
+	/*
+	Template Name: Accueil template
+	*/
+
+
+	get_header();
 ?>
-Accueil
+	
+	Accueil
+
+<?php
+	get_footer();
+?>
