@@ -28,6 +28,6 @@
 	<?php 
 		// For plugins 
 		wp_head();
-	 ?>
+	?>
 </head>
 <body class="<?php echo join(' ', get_body_class()); ?>">
