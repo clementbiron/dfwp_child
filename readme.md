@@ -1,8 +1,5 @@
-----------
-
 #### DFWP CHILD
 Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
-Changelog : 
 
 ----------
 
