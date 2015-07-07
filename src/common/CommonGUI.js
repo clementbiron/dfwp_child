@@ -6,6 +6,6 @@ var CommonGUI = new (function()
 	//Init
 	this.init = function() 
 	{
-		
+		console.log('CommonGUI init() ');
 	};
 });
