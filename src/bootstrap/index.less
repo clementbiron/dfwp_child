@@ -1,21 +1,34 @@
-//Importer les fichiers less des dependencies 
-@import '../../lib/dependencies/dfwp/include.less';
+/**
+ * Dépendances
+ */
 
-//La config du child theme
+//Knacss
+@import '../lib/knacss/knacss.less';
+
+//Mixins DFWP
+@import '../lib/dfwp/mixins.less';
+
+
+/**
+ * Config et sprite
+ */
 @import 'config.less';
-
-//Importer le sprite
 @import '../common/sprite.less';
+
+
+/**
+ * Styles du projet
+ */
 
 //Importer les élements
 @import '../common/elements.less';
 
-//Importer le layout
-@import '../common/layout/layout.less';
+//Importer le layout general du projet
+@import '../common/layout/general.less';
 
 //Importer les composants
-//@import '../components/select/select.less';
+@import '../components/exemple/exemple.less';
 
-//IE
+//IE support
 @import '../common/ie.less';
 

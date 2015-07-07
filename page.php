@@ -12,7 +12,6 @@ page of dfwp_child
 	endif; 
 ?>
 
-
 <?php
 	get_footer();
 ?>

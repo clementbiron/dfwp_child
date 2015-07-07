@@ -1,8 +1,4 @@
-		<?php
-			//For plugins and other
-			wp_footer();
-		?>
-
+		
 		<div class="dfwp_warningIE" id="dfwp_warningIE">
 	  		<div class="dfwp_warningIE_bg"></div>
 			<div class="dfwp_warningIE_msg">				
@@ -12,8 +8,12 @@
 				<p onclick="document.getElementById('dfwp_warningIE').style.display = 'none';"><strong>Cliquez ici pour continuer sur le site</strong></p>
 			</div>
 		</div>
+
+		<?php
+			//For plugins and other
+			wp_footer();
+		?>
    
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/deploy/js/script.js"></script>
 		<script type="text/javascript">
 			DFWP_Bootstrap.init();
 		</script>
