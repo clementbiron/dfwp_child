@@ -1,13 +1,19 @@
 ----------
 
 #### DFWP CHILD
-Theme enfant de DFWP (https://github.com/posykrat/dfwp)
+Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
+Changelog : 
 
 ----------
 
 #### TODO
 - Mettre en place un optimiseur d'image
 - Mettre en place un outil de création de sprite (png + svg)
+
+----------
+
+#### CHANGELOG
+A voir ici : [Changelog](https://github.com/posykrat/dfwp_child/blob/develop/changelog.md)
 
 ----------
 
