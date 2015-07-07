@@ -1,3 +1,16 @@
+----------
+
+#### DFWP CHILD
+Theme enfant de DFWP (https://github.com/posykrat/dfwp)
+
+----------
+
+#### TODO
+- Mettre en place un optimiseur d'image
+- Mettre en place un outil de création de sprite (png + svg)
+
+----------
+
 #### SETUP
 
 1. Configurer Knacss : src/lib/knacss/_00-config.less
@@ -33,3 +46,4 @@ Le fichier maintenance.css est chargé uniquement pour cette page.
 #### PATTERN
 La pattern library est accessible via exemple.com/pattern
 Le fichier pattern.css est chargé uniquement pour cette page.
+
