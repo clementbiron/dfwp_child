@@ -62,8 +62,8 @@
 		); 
 
 		add_menu_page(
-	      'DF WP Options', // le titre de la page
-	      'DF WP Options',            // le nom de la page dans le menu d'admin
+	      'DFWP Options', // le titre de la page
+	      'DFWP Options',            // le nom de la page dans le menu d'admin
 	      'administrator',        // le rôle d'utilisateur requis pour voir cette page
 	      'df-wp-options',        // un identifiant unique de la page
 	      'dfSettingsPage'   // le nom d'une fonction qui affichera la page

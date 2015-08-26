@@ -1,33 +1,52 @@
+#### DFWP CHILD
+Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
+
+----------
+
+#### TODO
+- Mettre en place un optimiseur d'image
+- Mettre en place un outil de création de sprite (png + svg)
+
+----------
+
+#### CHANGELOG
+A voir ici : [Changelog](https://github.com/posykrat/dfwp_child/blob/develop/changelog.md)
+
+----------
+
 #### SETUP
 
- 1. Configurer Knacss : lib/dependencies/knacss/_00-config.less
- 2. Faire la config Less : lib/dependencies/dfwp/config.less
- 3. Activer le thème enfant et configurer les options de DFWP en administration
- 5. Configuration du fichier wp-config.php
-	 6. générer des clés d'authentification SALT ici : https://api.wordpress.org/secret-key/1.1/salt/ qui vont chiffrer les cookies, coller dans le fichier
-	 7. Snippet à ajouter dans le fichier : https://gist.github.com/posykrat/0e932cff886d17d79686
- 8. Sippet à ajouter dans le fichier .htaccess : https://gist.github.com/posykrat/24435b380017c8983e67
+1. Configurer Knacss : src/lib/knacss/_00-config.less
+2. Configurer le projet : src/bootstrap/config.less
 
- 
 ----------
-#### NPM INSTALL
-npm install --save-dev
 
 #### BUILD
-Se mettre dans le dossier build
+1. Se positionner dans build : cd /build
+2. npm install --save-dev
+3. Commandes gulp disponibles :
 
-	cd /build
+	Pour le dev
+	gulp pattern : tâche pour la css du layout pattern
+	gulp maintenance : tâche pour la css du layout maintenance
+	gulp scripts : pour le js du projet
+	gulp styles : pour la css du projet
+	gulp : tâche par défaut = watch de gulp scripts + gulp styles
 	
-Commandes Grunt disponibles :
-
-	 grunt (local and watch)
-	 grunt dev (local)
-	 grunt dist (prod) 
+	Pourn la prod
+	gulp prod : création des fichiers pour la prod
 
 ----------
 
-#### Gestion de la Pattern
-Créer une page et l'associer au template 'Pattern template'
+#### MAINTENANCE
+Le fichier page-maintenance.php est utilisé pour les utilisateurs non loggé si l'option de
+maintenance est activée dans DFWP Options en administration.
 
-- fichier php : page-pattern.php
-- fichier less : lib/dfwp_pattern/pattern.less
+Le fichier maintenance.css est chargé uniquement pour cette page.
+
+----------
+
+#### PATTERN
+La pattern library est accessible via exemple.com/pattern
+Le fichier pattern.css est chargé uniquement pour cette page.
+

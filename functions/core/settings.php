@@ -25,17 +25,24 @@
 		Config::setMode('prod');
 	}
 
-	//En mode maintenance
-	if(get_option('maintenance_mode') == 'true'){
+	//Template include filter
+	add_filter( 'template_include', 'dfwpchild_page_template', 99 );
+	function dfwpchild_page_template( $template ) {
 		
-		//Si on est pas sur l'admin, qu'on est pas un utilisateur connecté ou que l'on est pas sur la page de login
-		if(!is_admin() && !is_user_logged_in() && (Login::isLoginPage() == false)){
+		//Si on a activé la maintenance
+		if(get_option('maintenance_mode') == 'true'){
 
-			global $wp;
+			//Si on est pas sur l'admin, qu'on est pas un utilisateur connecté ou que l'on est pas sur la page de login
+			if(!is_admin() && !is_user_logged_in() && (Login::isLoginPage() == false)){
 
-			//On redirige vers la page de maintenance
-			require_once(get_stylesheet_directory().'/maintenance.php');
-			die();
+				//On charge le template correspondant
+				$maintenanceTemplate = locate_template( array( 'page-maintenance.php' ) );
+				if ('' != $maintenanceTemplate ){
+					return $maintenanceTemplate ;
+				}	
+			}
 		}
+		return $template;
 	}
+	
 ?>

@@ -1,0 +1,92 @@
+/**
+ * Importer en références les fichiers du projets
+ */
+@import (reference) '../../bootstrap/index.less';
+
+
+
+/**
+ * Généralités du layout de la pattern
+ */
+body{
+
+}
+
+//Titre de niveau 1 
+.dfwp_pattern_h1{
+	font-size: 45px;
+	font-weight: bold;
+	line-height: normal;
+	color: #161616;
+	font-family: Arial, Helvetica, sans-serif;
+	margin:30px 0;
+	text-transform: normal;
+}
+
+//Titre de niveau 2 
+.dfwp_pattern_h2{
+	font-size: 30px;
+	line-height: normal;
+	color: #222222;
+	font-family: Arial, Helvetica, sans-serif;
+	margin:20px 0;
+	text-transform: normal;
+}
+
+//Titre de niveau 2 
+.dfwp_pattern_h3{
+	font-size: 20px;
+	line-height: normal;
+	color: #222222;
+	font-family: Arial, Helvetica, sans-serif;
+	margin:10px 0;
+	text-transform: normal;
+}
+
+//Container principal
+.dfwp_pattern_container{
+	
+	//Section
+	.dfwp_pattern_section{
+		.line;
+		margin:0 0 100px 0;
+		
+		//Sous section
+		.dfwp_pattern_subsection{
+			.line;
+			margin:0 0 50px 0; 
+
+			//Container value / code
+			.dfwp_valuecode_container{
+				//margin:5px;
+
+				//Value
+				.dfwp_pattern_value{
+					//.inbl;
+				}
+
+				//Code	
+				.dfwp_pattern_code{
+					.inbl;
+
+					pre{
+						tab-size: 4;
+						padding: 1em;
+						border-radius: 6px;
+						border: 1px solid rgba(0, 0, 0, 0.1);
+						background-color: #fffde1;
+						width: auto;
+						max-width: 400px;
+						word-wrap: break-word;
+						font-family: "Courier New", Courier, monospace;
+						color:#000;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+

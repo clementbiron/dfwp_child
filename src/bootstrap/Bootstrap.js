@@ -6,6 +6,8 @@ var Bootstrap = new (function()
 	//Init
 	this.init = function() 
 	{
+		console.log('Bootstrap init() ');
+
 		//Initialiser les élements d'interface communs
 		CommonGUI.init();
 	};

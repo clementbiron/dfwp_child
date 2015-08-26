@@ -18,7 +18,11 @@
 	<title><?php wp_title( '-', true, 'right' ); ?></title>
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.gif"  type="image/gif" />
+<<<<<<< HEAD
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.png"   type="image/png" />
+=======
+	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/static/favicon/favicon.png"   type="image/png" />	
+>>>>>>> origin/develop
 	<meta name="Author" content="Clément Biron" />
 	<meta name="Robots" content="all" />
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
