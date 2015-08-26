@@ -27,6 +27,9 @@
 
 	//Supprimer le footer yoast
 	Yoast::removeFooter();
+
+	//Chargement des langues
+	//load_theme_textdomain('dfwpchild',get_stylesheet_directory().'/languages');
 	
 	//Custom menus
 	/*	register_nav_menus( array(

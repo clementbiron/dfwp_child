@@ -25,7 +25,7 @@
 		Config::setMode('prod');
 	}
 
-	//Template incluide filter
+	//Template include filter
 	add_filter( 'template_include', 'dfwpchild_page_template', 99 );
 	function dfwpchild_page_template( $template ) {
 		

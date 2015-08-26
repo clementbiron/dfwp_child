@@ -1,3 +1,7 @@
+# changelog v1.9 (26 août 2015)
+
+- Désactivation des emoji par défaut
+
 # changelog v1.8 (7 juillet 2015)
 
 - Changement du Javascript Task Runner de Grunt vers Gulp
