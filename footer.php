@@ -8,9 +8,6 @@
 				<p onclick="document.getElementById('dfwp_warningIE').style.display = 'none';"><strong>Cliquez ici pour continuer sur le site</strong></p>
 			</div>
 		</div>
-<<<<<<< HEAD
-   		<script type="text/javascript">
-=======
 
 		<?php
 			//For plugins and other
@@ -18,7 +15,6 @@
 		?>
    
 		<script type="text/javascript">
->>>>>>> origin/develop
 			DFWP_Bootstrap.init();
 		</script>
    </body>
