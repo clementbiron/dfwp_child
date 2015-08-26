@@ -12,9 +12,7 @@
 				<p onclick="document.getElementById('dfwp_warningIE').style.display = 'none';"><strong>Cliquez ici pour continuer sur le site</strong></p>
 			</div>
 		</div>
-   
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/deploy/js/script.js"></script>
-		<script type="text/javascript">
+   		<script type="text/javascript">
 			DFWP_Bootstrap.init();
 		</script>
    </body>
