@@ -19,6 +19,9 @@
 	//On clean le head
 	Theme::cleanHeader();
 
+	//Désactiver les EMOJI
+	Theme::disableEmoji();
+
 	//Gestion titre et description
 	Seo::initHeader();
 
@@ -101,5 +104,5 @@
 			}
 		}
 	}
-	add_action('wp_enqueue_scripts', 'dfwpchild_enqueue_style');
+	add_action('wp_enqueue_scripts', 'dfwpchild_enqueue_style');	
 ?>
