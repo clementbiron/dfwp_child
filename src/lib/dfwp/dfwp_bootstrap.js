@@ -7,7 +7,7 @@ var DFWP_Bootstrap = new (function()
 	this.init = function() 
 	{
 		//Bootstrap init
-		if(window['Common'] != undefined){
+		if(window['CommonGUI'] != undefined){
 			Bootstrap.init();
 		}
 		

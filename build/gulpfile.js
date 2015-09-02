@@ -66,7 +66,7 @@ gulp.task('maintenance',function(){
 gulp.task('scripts', function () {
 	gulp.src([
 		'../src/lib/dfwp/*.js', //Strong dependencies
-		'../src/lib/**/**/*.js', //Strong dependencies
+		//'../src/lib/**/**/*.js', //Strong dependencies
 		'../src/bootstrap/bootstrap.js', //Project bootstrap
 		'../src/common/*.js', //Project files
 		'../src/common/**/*.js', //Project files
@@ -116,7 +116,7 @@ gulp.task('prod',function(){
 	//Js prod
 	gulp.src([
 		'../src/lib/dfwp/*.js', //Strong dependencies
-		'../src/lib/**/**/*.js', //Strong dependencies
+		//'../src/lib/**/**/*.js', //Strong dependencies
 		'../src/bootstrap/bootstrap.js', //Project bootstrap
 		'../src/common/*.js', //Project files
 		'../src/common/**/*.js', //Project files
