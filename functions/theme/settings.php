@@ -13,8 +13,8 @@
 	use Doublefou\Core\Debug;
 	use Doublefou\Helper\Login;
 
-	//On cache l'admin bar sur le front
-	Theme::hideAdminBar();
+	//On cache l'admin bar sur le front sauf pour l'admin
+	Theme::hideAdminBar('activate_plugins');
 
 	//On clean le head
 	Theme::cleanHeader();
