@@ -2,6 +2,7 @@
 
 - Ne plus cacher l'admin bar en front pour l'admin par défaut
 - Suprresion du background:blue sur le body qui trainait
+- Numérotation des changelog = tag
 
 # changelog v2.0.0 (26 août 2015)
 
