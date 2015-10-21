@@ -3,6 +3,7 @@
 - Ne plus cacher l'admin bar en front pour l'admin par défaut
 - Suprresion du background:blue sur le body qui trainait
 - Numérotation des changelog = tag
+- Changement de l'adresse du changelog dans le readme pour qu'il pointe sur le changelog de la branche master et non pas sur celui de la branche develop
 
 # changelog v2.0.0 (26 août 2015)
 

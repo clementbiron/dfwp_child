@@ -12,7 +12,7 @@ Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
 ----------
 
 #### CHANGELOG
-A voir ici : [Changelog](https://github.com/posykrat/dfwp_child/blob/develop/changelog.md)
+A voir ici : [Changelog](https://github.com/posykrat/dfwp_child/blob/master/changelog.md)
 
 ----------
 
