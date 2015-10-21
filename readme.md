@@ -4,6 +4,7 @@ Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
 ----------
 
 #### TODO
+- Tester unCSS : https://www.npmjs.com/package/gulp-uncss
 - Ajouter un optimiseur d'image à Gulp
 - Ajouter un outil de création de sprite (png + svg) à Gulp
 - Ajouter BrowserSyn à Gulp
