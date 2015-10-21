@@ -1,8 +1,13 @@
-# changelog v1.9 (26 août 2015)
+# changelog v2.0.1 (21 octobre 2015)
+
+- Ne plus cacher l'admin bar en front pour l'admin par défaut
+- Suprresion du background:blue sur le body qui trainait
+
+# changelog v2.0.0 (26 août 2015)
 
 - Désactivation des emoji par défaut
 
-# changelog v1.8 (7 juillet 2015)
+# changelog v1.9.1 (7 juillet 2015)
 
 - Changement du Javascript Task Runner de Grunt vers Gulp
 - Modifications importantes de l'arbo
