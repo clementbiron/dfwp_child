@@ -80,7 +80,7 @@ gulp.task('scripts', function () {
 /**
  * Default task en dev 
  */
-gulp.task('default', function() {
+gulp.task('default',['styles','scripts'], function() {
 	livereload.listen();
 	gulp.watch([
 		'../src/*.less',
