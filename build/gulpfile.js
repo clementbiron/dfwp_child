@@ -9,6 +9,15 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
+
+//Config des erreurs
+var notifyError = {
+	title: "Error",
+	message: "<%= error.message %>",
+	sound: "Frog" //Seulement sur mac 
+}
 	
 /**
  * CSS du projet
@@ -17,6 +26,9 @@ gulp.task('styles',function(){
 	gulp.src([
 		'../src/bootstrap/index.less',
 	])
+	.pipe(plumber({
+      errorHandler:notify.onError(notifyError)
+    }))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -33,6 +45,9 @@ gulp.task('pattern',function(){
 	gulp.src([
 		'../src/common/layout/pattern.less',
 	])
+	.pipe(plumber({
+      errorHandler:notify.onError(notifyError)
+    }))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -50,6 +65,9 @@ gulp.task('maintenance',function(){
 	gulp.src([
 		'../src/common/layout/maintenance.less',
 	])
+	.pipe(plumber({
+      errorHandler:notify.onError(notifyError)
+    }))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -72,6 +90,9 @@ gulp.task('scripts', function () {
 		'../src/common/**/*.js', //Project files
 		'../src/components/**/*.js'
 	])
+	.pipe(plumber({
+      errorHandler:notify.onError(notifyError)
+    }))
 	.pipe(concat('index.js'))
 	.pipe(gulp.dest('../dist/js/'))
 	.pipe(livereload());
@@ -105,6 +126,9 @@ gulp.task('prod',function(){
 	gulp.src([
 		'../src/bootstrap/index.less',
 	])
+	.pipe(plumber({
+      errorHandler:notify.onError(notifyError)
+    }))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -122,6 +146,7 @@ gulp.task('prod',function(){
 		'../src/common/**/*.js', //Project files
 		'../src/components/**/*.js'
 	])
+	.pipe(plumber())
 	.pipe(concat('index.min.js'))
 	.pipe(uglify({
 		mangle: true,

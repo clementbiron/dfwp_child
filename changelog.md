@@ -1,3 +1,8 @@
+# changelog v2.0.2 (19 novembre 2015)
+
+- ajout du package Plumber et Notify dans Gulp
+- namespace par défaut à Knacss : 'k', utilisation exemple : .kmod;
+
 # changelog v2.0.1 (21 octobre 2015)
 
 - Ne plus cacher l'admin bar en front pour l'admin par défaut
