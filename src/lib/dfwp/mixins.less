@@ -48,7 +48,7 @@
  */
 .background (@image; @repeat:no-repeat; @position:top left; @color:transparent)
 {
-	background: url('@{imagesPath}@{image}') @repeat @position @color;
+	background: url('@{imageBase}@{image}') @repeat @position @color;
 }
 
 /**
@@ -88,24 +88,6 @@
 	box-shadow: none;
 }
 
-/**
- * Sprite
- */
-.sprite (@positionX:0px; @positionY:0px; @repeat:no-repeat; @sprite:'sprite.png')
-{
-	.background(@sprite, @repeat, -@positionX -@positionY);
-	background-size: @spriteWidth / @spriteDensity @spriteHeight / @spriteDensity;
-}
-
-/**
- * Target sprite
- */
-.targetSprite (@sprite:'sprite.png')
-{
-	background-image: url('@{imagesPath}@{sprite}');
-	background-repeat: no-repeat;
-	background-size: @spriteWidth / @spriteDensity @spriteHeight / @spriteDensity;	
-}
 
 /**
  * Accélération matérielle 2D du pauvre

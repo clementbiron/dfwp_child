@@ -1,3 +1,8 @@
+# changelog v2.1.0 (20 novembre 2015)
+
+- ajout de la gestion de la génération des sprites automatiquement
+- git ignore style.css
+
 # changelog v2.0.2 (19 novembre 2015)
 
 - ajout du package Plumber et Notify dans Gulp

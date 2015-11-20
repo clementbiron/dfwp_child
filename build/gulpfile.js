@@ -11,6 +11,7 @@ var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
+var spritesmith = require('gulp.spritesmith');
 
 //Config des erreurs
 var notifyError = {
@@ -18,6 +19,41 @@ var notifyError = {
 	message: "<%= error.message %>",
 	sound: "Frog" //Seulement sur mac 
 }
+
+//Sprite normal (1x)
+gulp.task('sprite', function () {
+
+	var spriteData = gulp.src('../src/sprite/1x/*.png')
+	.pipe(plumber({
+		errorHandler:notify.onError(notifyError)
+	}))
+	.pipe(spritesmith({
+		imgName: 'sprite.png',
+		cssName: 'sprite.less',
+		cssTemplate: 'templates/sprite1x.less.handlebars'
+	}));
+
+	var imgStream = spriteData.img.pipe(gulp.dest('../dist/img/1x/'));
+	var cssStream = spriteData.css.pipe(gulp.dest('../src/sprite/1x/'));
+});
+
+//Sprite retina (2x)
+gulp.task('sprite2x', function () {
+
+	var spriteData = gulp.src('../src/sprite/2x/*.png')
+	.pipe(plumber({
+		errorHandler:notify.onError(notifyError)
+	}))
+	.pipe(spritesmith({
+		imgName: 'sprite2x.png',
+		cssName: 'sprite2x.less',
+		cssTemplate: 'templates/sprite2x.less.handlebars'
+	}));
+
+	var imgStream = spriteData.img.pipe(gulp.dest('../dist/img/2x/'));
+	var cssStream = spriteData.css.pipe(gulp.dest('../src/sprite/2x/'));
+});
+
 	
 /**
  * CSS du projet
@@ -27,8 +63,8 @@ gulp.task('styles',function(){
 		'../src/bootstrap/index.less',
 	])
 	.pipe(plumber({
-      errorHandler:notify.onError(notifyError)
-    }))
+	 	errorHandler:notify.onError(notifyError)
+	}))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -46,8 +82,8 @@ gulp.task('pattern',function(){
 		'../src/common/layout/pattern.less',
 	])
 	.pipe(plumber({
-      errorHandler:notify.onError(notifyError)
-    }))
+	 	errorHandler:notify.onError(notifyError)
+	}))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -66,8 +102,8 @@ gulp.task('maintenance',function(){
 		'../src/common/layout/maintenance.less',
 	])
 	.pipe(plumber({
-      errorHandler:notify.onError(notifyError)
-    }))
+		errorHandler:notify.onError(notifyError)
+	}))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -91,8 +127,8 @@ gulp.task('scripts', function () {
 		'../src/components/**/*.js'
 	])
 	.pipe(plumber({
-      errorHandler:notify.onError(notifyError)
-    }))
+		errorHandler:notify.onError(notifyError)
+	}))
 	.pipe(concat('index.js'))
 	.pipe(gulp.dest('../dist/js/'))
 	.pipe(livereload());
@@ -101,8 +137,14 @@ gulp.task('scripts', function () {
 /**
  * Default task en dev 
  */
-gulp.task('default',['styles','scripts'], function() {
+gulp.task('default',['sprite','sprite2x','styles','scripts',], function() {
 	livereload.listen();
+	gulp.watch([
+		'../src/sprite/1x/*.png',
+		],['sprite']);
+	gulp.watch([
+		'../src/sprite/2x/*.png',
+		],['sprite2x']);
 	gulp.watch([
 		'../src/*.less',
 		'../src/**/*.less',
@@ -127,8 +169,8 @@ gulp.task('prod',function(){
 		'../src/bootstrap/index.less',
 	])
 	.pipe(plumber({
-      errorHandler:notify.onError(notifyError)
-    }))
+		errorHandler:notify.onError(notifyError)
+	}))
 	.pipe(sourcemaps.init())
 	.pipe(less())
 	.pipe(autoprefixer('last 2 versions',"> 5%", "Explorer 9", "Android 4"))
@@ -151,7 +193,7 @@ gulp.task('prod',function(){
 	.pipe(uglify({
 		mangle: true,
 		compress: {
-        	sequences: true, // join consecutive statemets with the “comma operator”
+			sequences: true, // join consecutive statemets with the “comma operator”
 			dead_code: true, // discard unreachable code
 			conditionals: true, // optimize if-s and conditional expressions
 			booleans: true, // optimize boolean expressions
@@ -159,7 +201,7 @@ gulp.task('prod',function(){
 			if_return: true, // optimize if-s followed by return/continue
 			join_vars: true, // join var declarations
 			drop_console: true // drop console
-        }
+		}
 	}))
 	.pipe(gulp.dest('../dist/js/'));
 });
