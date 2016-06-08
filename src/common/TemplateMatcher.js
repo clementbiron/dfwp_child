@@ -1,4 +1,4 @@
-var DFWP_Bootstrap = new (function() 
+var TemplateMatcher = new (function()
 {
 	// Accès à l'objet
 	var that = this;
@@ -6,16 +6,13 @@ var DFWP_Bootstrap = new (function()
 	//Init
 	this.init = function() 
 	{
-		//Bootstrap init
-		if(window['CommonGUI'] != undefined){
-			Bootstrap.init();
-		}
-		
-		//Appel d'objet dynamic
-		that.dynamicClassCall();
+		console.log('TemplateMatcher init() ');
+
+		//Appel d'objets JS en fonction du template hierarchy
+		that.matchTemplate();
 	},
 	
-	this.dynamicClassCall = function ()
+	this.matchTemplate = function ()
 	{
 		//On récupéere le noeud dom <body>
 		var bodyDom = document.getElementsByTagName('body')[0];
@@ -24,23 +21,26 @@ var DFWP_Bootstrap = new (function()
 		var htmlClass = bodyDom.className;
 		
 		//On camelize
-		htmlClass = DFWP_Helper.camelize(htmlClass);
-		
+		//htmlClass = DFWP_Helper.camelize(htmlClass);
+		htmlClass = (htmlClass + "").replace(/-\D/g, function(match) {
+			return match.charAt(1).toUpperCase();
+		});
+
 		//On coupe au niveau des ' '
 		htmlClass = htmlClass.split(' ');
 		
 		//Pour chaque valeur
-		htmlClass.forEach(function(entry) {
-			
+		htmlClass.forEach(function(entry)
+		{
 			//On capitalize la première lettre
-			value = DFWP_Helper.capitaliseFirstLetter(entry);
-			
+			var value = entry.charAt(0).toUpperCase() + entry.slice(1);
+
 			//On instancie un objet avec la string
 			var currentObject = window[value];
 			
 			//Si cet objet existe
-			if(currentObject != undefined){
-
+			if(currentObject != undefined)
+			{
 				//Alors on l'initialie
 				currentObject.init();
 			}

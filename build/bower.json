@@ -1,0 +1,6 @@
+{
+	"name": "dfwp_child",
+	"dependencies": {
+		"knacss": "latest"
+	}
+}

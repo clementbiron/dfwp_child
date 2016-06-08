@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "devDependencies": {
     "gulp": "latest",
-    "gulp-less": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
     "gulp-csso": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
     "gulp-uglify": "latest",
     "gulp-livereload": "latest",
-    "gulp-sourcemaps": "latest"
+    "gulp-plumber" : "latest",
+    "gulp.spritesmith" : "latest",
+    "gulp-notify" : "latest"
   },
   "dependencies": {
     "time-grunt": "latest"

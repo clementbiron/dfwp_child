@@ -93,6 +93,7 @@
 		if(is_page_Template('page-pattern.php')){
 
 			//On charge la css qui va bien
+			wp_dequeue_style('dfwpchild_index');
 			wp_enqueue_style('dfwpchild_pattern');
 		}
 
@@ -103,6 +104,7 @@
 			if(!is_admin() && !is_user_logged_in() && (Login::isLoginPage() == false)){
 
 				//On charge la feuille de style de la maintenance
+				wp_dequeue_style('dfwpchild_index');
 				wp_enqueue_style('dfwpchild_maintenance');
 			}
 		}

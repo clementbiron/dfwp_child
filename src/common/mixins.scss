@@ -1,0 +1,9 @@
+/**
+ * Debug mixin
+ * @size {string}
+ * @color {string}
+ */
+@mixin debug($size:1px, $color:red)
+{
+	outline: $size solid $color;
+}

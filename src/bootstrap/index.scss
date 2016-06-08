@@ -1,0 +1,36 @@
+/**
+ * Dépendances
+ */
+//Knacss
+@import '../libs/knacss/sass/knacss.scss';
+
+//Mixins DFWP
+@import '../common/mixins.scss';
+
+
+/**
+ * Config et vars
+ */
+@import 'config.scss';
+
+/**
+ * Sprites (à décommenter en fonction de l'utilisation)
+ */
+//@import '../sprite/1x/sprite1x.scss';
+//@import '../sprite/2x/sprite2x.scss';
+
+
+/**
+ * Styles du projet
+ */
+//Importer les élements
+@import '../common/elements.scss';
+
+//Importer le layout general du projet
+@import '../common/layout/general.scss';
+
+//Importer les composants
+@import '../components/exemple/exemple.scss';
+
+//IE support
+@import '../common/ie.scss';

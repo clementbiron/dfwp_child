@@ -1,3 +1,23 @@
+# changelog v2.2.0 (08 juin 2016)
+
+- passage à SASS
+- utilisation de Bower et configuration pour l'installation de KNACSS
+- suppression du message pour les vieux navigateurs (qu'ils se démmerdent) 
+- modification du .gitignore
+- modification du readme
+- simplification des tâches Gullp
+- divers changements de noms de fichiers et dossiers
+
+# changelog v2.1.0 (20 novembre 2015)
+
+- ajout de la gestion de la génération des sprites automatiquement
+- git ignore style.css
+
+# changelog v2.0.2 (19 novembre 2015)
+
+- ajout du package Plumber et Notify dans Gulp
+- namespace par défaut à Knacss : 'k', utilisation exemple : .kmod;
+
 # changelog v2.0.1 (21 octobre 2015)
 
 - Ne plus cacher l'admin bar en front pour l'admin par défaut

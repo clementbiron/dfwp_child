@@ -1,6 +1,14 @@
+# Specific files #
+###################
+style.css
+
 # Nodes module #
 ###################
 build/node_modules/
+
+# Projects folders #
+###################
+src/libs/
 
 # Compiled source #
 ###################
