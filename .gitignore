@@ -6,6 +6,10 @@ style.css
 ###################
 build/node_modules/
 
+# Projects folders #
+###################
+src/libs/
+
 # Compiled source #
 ###################
 *.dll

@@ -1,3 +1,13 @@
+# changelog v2.2.0 (08 juin 2016)
+
+- passage à SASS
+- utilisation de Bower et configuration pour l'installation de KNACSS
+- suppression du message pour les vieux navigateurs (qu'ils se démmerdent) 
+- modification du .gitignore
+- modification du readme
+- simplification des tâches Gullp
+- divers changements de noms de fichiers et dossiers
+
 # changelog v2.1.0 (20 novembre 2015)
 
 - ajout de la gestion de la génération des sprites automatiquement

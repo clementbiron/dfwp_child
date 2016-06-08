@@ -1,4 +1,4 @@
-.sprite{
+.sprite1x{
 	display:inline-block;
 	overflow: hidden;
 	background-repeat: no-repeat;
@@ -6,8 +6,8 @@
 }
 
 {{#sprites}}
-.sprite-{{name}}{ 
-	.sprite;
+.sprite1x-{{name}}{
+	@extend .sprite1x;
 	width: {{px.width}}; 
 	height: {{px.height}}; 
 	background-position: {{px.offset_x}} {{px.offset_y}};

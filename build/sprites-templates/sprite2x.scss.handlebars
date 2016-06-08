@@ -8,7 +8,7 @@
 
 {{#sprites}}
 .sprite2x-{{name}}{ 
-	.sprite2x;
+	@extend .sprite2x;
 	width: {{px.width}}/2; 
 	height: {{px.height}}/2; 
 	background-position: {{px.offset_x}}/2 {{px.offset_y}}/2;

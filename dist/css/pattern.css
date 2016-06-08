@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /**
+ * Importer les fichiers du projets
+ */
+/**
  * Dépendances
  */
 /*!
@@ -774,12 +777,16 @@ th {
 /* blocks that needs to be placed under floats */
 .clear,
 .line,
+.dfwp_pattern_section,
+.dfwp_pattern_subsection,
 .row {
   clear: both; }
 
 /* blocks that must contain floats */
 .clearfix::after,
-.line::after {
+.line::after,
+.dfwp_pattern_section::after,
+.dfwp_pattern_subsection::after {
   content: "";
   display: table;
   clear: both;
@@ -839,7 +846,7 @@ body > script {
   display: none !important; }
 
 /* inline-block */
-.inbl {
+.inbl, .dfwp_pattern_code {
   display: inline-block;
   vertical-align: top; }
 
@@ -1703,3 +1710,51 @@ body {
  */
 .exemple {
   border: 1px solid red; }
+
+/**
+ * Généralités du layout de la pattern
+ */
+.dfwp_pattern_h1 {
+  font-size: 45px;
+  font-weight: bold;
+  line-height: normal;
+  color: #161616;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px 0;
+  text-transform: normal; }
+
+.dfwp_pattern_h2 {
+  font-size: 30px;
+  line-height: normal;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px 0;
+  text-transform: normal; }
+
+.dfwp_pattern_h3 {
+  font-size: 20px;
+  line-height: normal;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+  text-transform: normal; }
+
+.dfwp_pattern_section {
+  margin: 0 0 100px 0; }
+
+.dfwp_pattern_subsection {
+  margin: 0 0 50px 0; }
+
+.dfwp_pattern_code pre {
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  padding: 1em;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fffde1;
+  width: auto;
+  max-width: 400px;
+  word-wrap: break-word;
+  font-family: "Courier New", Courier, monospace;
+  color: #000; }

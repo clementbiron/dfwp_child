@@ -1,4 +1,4 @@
-var Bootstrap = new (function() 
+var Bootstrap = new (function()
 {
 	// Accès à l'objet
 	var that = this;
@@ -10,5 +10,8 @@ var Bootstrap = new (function()
 
 		//Initialiser les élements d'interface communs
 		CommonGUI.init();
+
+		//Initialisation du template matcher
+		TemplateMatcher.init();
 	};
 });

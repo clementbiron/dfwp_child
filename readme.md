@@ -4,10 +4,11 @@ Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
 ----------
 
 #### TODO
-- Ajouter la compression d'image pour le build en dev (images static et générées)
-- Mettre en place un outil de sprite svg
-- Supprimer la gestion du message d'erreur IE 8 
-- Installer Dpoy par défaut
+- Ajouter la compression pour les images statiques
+- Ajouter la gestion des sprite svg
+- Ajouter une gestion d'environnement
+- Mettre à jour les mixins en version SASS
+- Renommer la pattern en 'style guide'
 
 ----------
 
@@ -16,44 +17,35 @@ A voir ici : [Changelog](https://github.com/posykrat/dfwp_child/blob/master/chan
 
 ----------
 
-#### SETUP
+#### BUILD & SETUP
 
-1. Configurer Knacss : src/lib/knacss/_00-config.less
-2. Configurer le projet : src/bootstrap/config.less
+1. Installer Node & Bower
+2. Dans le dossier build : 
+    `npm install`
+    `bower install`
+5. Configurer Knacss : src/libs/knacss/sass/_config-variables.sass
+6. Configurer le projet : src/bootstrap/config.less
 
-----------
-
-#### BUILD
-1. Se positionner dans build : cd /build
-2. npm install --save-dev
-3. Commandes gulp disponibles :
-
-	Pour le dev
-	gulp pattern : tâche pour la css du layout pattern
-	gulp maintenance : tâche pour la css du layout maintenance
-	gulp sprite : gestion du sprite 1x
-	gulp sprite2x : gestion du sprite retina 2x
-	gulp scripts : pour le js du projet
-	gulp styles : pour la css du projet
-	gulp : tâche par défaut + watch de gulp sprite, sprite2x, scripts + styles
-	
-	Pourn la prod
-	gulp prod : création des fichiers pour la prod
+Commandes gulp disponibles :
+	gulp styles 
+	gulp scripts 
+	gulp sprites 
+	gulp : tâche par défaut + watch de gulp sprites, scripts et styles
 
 ----------
 
 #### SPRITES
-Les sprites 1x et 2x sont générées automatiquement.
+Les sprites 1x et 2x sont générés automatiquement.
 
 1. Sprite 1x :
 	Png sources : src\sprite\1x
-	Less : src\sprite\1x\sprite.less
-	Sprite : dist\img\1x\sprite.png
+	Sass : src\sprite\1x\sprite1x.scss
+	Sprite : dist\img\1x\sprite1x.png
 
 1. Sprite 2x :
 	Png sources : src\sprite\2x
-	Less : src\sprite\2x\sprite2x.less
-	Sprite : dist\img\2x\sprite.png
+	Sass : src\sprite\2x\sprite2x.less
+	Sprite : dist\img\2x\sprite2x.png
 
 ----------
 
@@ -66,6 +58,6 @@ Le fichier maintenance.css est chargé uniquement pour cette page.
 ----------
 
 #### PATTERN
-La pattern library est accessible via exemple.com/pattern
+La pattern library est accessible via www.exemple.com/pattern
 Le fichier pattern.css est chargé uniquement pour cette page.
 

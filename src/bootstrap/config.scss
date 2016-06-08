@@ -3,10 +3,10 @@
  */
 
 /* Lien vers les images */
-@imageBase: "../dist/img/";
+$imageBase: "../dist/img/";
 
 /* Gestion IE versions */
 //@ie-version-to-support: 9;
 
 //Taille par défaut des fonts
-@default-font-size: 14px;
+$default-font-size: 14px;
