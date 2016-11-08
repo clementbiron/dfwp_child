@@ -1,6 +1,7 @@
-# changelog v2.5.0 
+# changelog v2.3.0 (8 nov 2016)
 
-- mise à jour de .gitignore / package.json
+- mise à jour de .gitignore et package.json
+- ajout du dossier static/favicon
 
 # changelog v2.2.0 (08 juin 2016)
 
