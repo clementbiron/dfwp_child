@@ -18,8 +18,7 @@ var rename = require('gulp-rename');
 //Config des erreurs
 var notifyError = {
 	title: "Error",
-	message: "<%= error.message %>",
-	sound: "Frog" //Seulement sur mac 
+	message: "<%= error.message %>"
 }
 
 //Sprites
@@ -77,19 +76,19 @@ gulp.task('styles',function()
 	stylesBootstrap.forEach(function(el)
 	{
 		gulp.src(el.src)
-		.pipe(plumber({
-			errorHandler:notify.onError(notifyError)
-		}))
-		.pipe(sass().on('error', sass.logError))
-		.pipe(autoprefixer("> 4%"))
-		.pipe(concat(el.name +'.css'))
-		.pipe(gulp.dest('../dist/css/'))
+			.pipe(plumber({
+				errorHandler:notify.onError(notifyError)
+			}))
+			.pipe(sass().on('error', sass.logError))
+			.pipe(autoprefixer("> 4%"))
+			.pipe(concat(el.name +'.css'))
+			.pipe(gulp.dest('../dist/css/'))
 
-		//Pour la version minifié
-		.pipe(csso())
-		.pipe(concat(el.name +'.min.css'))
-		.pipe(gulp.dest('../dist/css/'))
-		.pipe(livereload());
+			//Pour la version minifié
+			.pipe(csso())
+			.pipe(concat(el.name +'.min.css'))
+			.pipe(gulp.dest('../dist/css/'))
+			.pipe(livereload());
 	});
 });
 
@@ -99,34 +98,34 @@ gulp.task('styles',function()
 gulp.task('scripts', function ()
 {
 	gulp.src([
-		//'../src/libs/*.js', //Libs
-		'../src/common/*.js', //Project files
-		'../src/common/**/*.js', //Project files
-		'../src/components/**/*.js', //Components js
-		'../src/bootstrap/bootstrap.js' //Project bootstrap
-	])
-	.pipe(plumber({
-		errorHandler:notify.onError(notifyError)
-	}))
-	.pipe(concat('index.js'))
-	.pipe(gulp.dest('../dist/js/'))
-	.pipe(rename({ extname: '.min.js' }))
-	.pipe(uglify({
-		mangle: true,
-		compress: {
-			sequences: true, // join consecutive statemets with the “comma operator”
-			dead_code: true, // discard unreachable code
-			conditionals: true, // optimize if-s and conditional expressions
-			booleans: true, // optimize boolean expressions
-			unused: true, // drop unused variables/functions
-			if_return: true, // optimize if-s followed by return/continue
-			join_vars: true, // join var declarations
-			drop_console: true // drop console
-		}
-	}))
-	.pipe(gulp.dest('../dist/js/'))
-	.pipe(livereload());
-});	
+			//'../src/libs/*.js', //Libs
+			'../src/common/*.js', //Project files
+			'../src/common/**/*.js', //Project files
+			'../src/components/**/*.js', //Components js
+			'../src/bootstrap/bootstrap.js' //Project bootstrap
+		])
+		.pipe(plumber({
+			errorHandler:notify.onError(notifyError)
+		}))
+		.pipe(concat('index.js'))
+		.pipe(gulp.dest('../dist/js/'))
+		.pipe(rename({ extname: '.min.js' }))
+		.pipe(uglify({
+			mangle: true,
+			compress: {
+				sequences: true, // join consecutive statemets with the “comma operator”
+				dead_code: true, // discard unreachable code
+				conditionals: true, // optimize if-s and conditional expressions
+				booleans: true, // optimize boolean expressions
+				unused: true, // drop unused variables/functions
+				if_return: true, // optimize if-s followed by return/continue
+				join_vars: true, // join var declarations
+				drop_console: true // drop console
+			}
+		}))
+		.pipe(gulp.dest('../dist/js/'))
+		.pipe(livereload());
+});
 
 /**
  * Default task
@@ -135,18 +134,18 @@ gulp.task('default',['sprites','styles','scripts',], function() {
 	livereload.listen();
 	gulp.watch([
 		'../src/sprites/**/*.png',
-		],['sprites']);
+	],['sprites']);
 	gulp.watch([
 		'../src/*.scss',
 		'../src/**/*.scss',
 		'../src/**/**/*.scss',
 		'../src/libs/**/*.scss',
 		'../src/libs/**/**/*.scss',
-		],['styles']);
+	],['styles']);
 	gulp.watch([
 		'../src/*.js',
 		'../src/**/*.js',
 		'../src/**/**/*.js',
 		'../src/libs/**/*.js',
-		],['scripts']);
+	],['scripts']);
 });

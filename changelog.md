@@ -1,3 +1,7 @@
+# changelog v2.5.0 
+
+- mise à jour de .gitignore / package.json
+
 # changelog v2.2.0 (08 juin 2016)
 
 - passage à SASS
