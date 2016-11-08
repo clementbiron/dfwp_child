@@ -1,18 +1,18 @@
 {
   "name": "dfwp_child",
-  "version": "0.1.0",
+  "version": "2.5.0",
   "devDependencies": {
     "gulp": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
-    "gulp-csso": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
-    "gulp-uglify": "latest",
+    "gulp-csso": "latest",
     "gulp-livereload": "latest",
-    "gulp-plumber" : "latest",
-    "gulp.spritesmith" : "latest",
-    "gulp-notify" : "latest"
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp.spritesmith": "latest"
   },
   "dependencies": {
     "time-grunt": "latest"
