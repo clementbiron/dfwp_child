@@ -32,14 +32,12 @@
 	//load_theme_textdomain('dfwpchild',get_stylesheet_directory().'/languages');
 	
 	//Custom menus
-	/*	register_nav_menus( array(
-		'menu-header' => 'Navigation principale',
-		'menu-footer' => 'Navigation en pied de page'
-	) );
-	*/
+	register_nav_menus( array(
+		'menu-header' => 'Navigation principale'
+	));
 
 	//Chargement des fichiers javascript
-	function dfwpchild_enqueue_scripts() {
+	function dfwp_enqueueScripts() {
 
 		//Le nom du fichier js du projet
 		//dépends du 'mode' choisi en admin
@@ -59,10 +57,10 @@
 		//Charger le fichier js du projet
 		wp_enqueue_script('dfwpchild_index');
 	}
-	add_action('wp_enqueue_scripts', 'dfwpchild_enqueue_scripts');
+	add_action('wp_enqueue_scripts', 'dfwp_enqueueScripts');
 
 	//Chargement styles en front
-	function dfwpchild_enqueue_style(){
+	function dfwp_enqueueStyle(){
 
 		//Le nom du fichier css du projet
 		//dépends du 'mode' choisi en admin
@@ -109,5 +107,5 @@
 			}
 		}
 	}
-	add_action('wp_enqueue_scripts', 'dfwpchild_enqueue_style');	
+	add_action('wp_enqueue_scripts', 'dfwp_enqueueStyle');
 ?>

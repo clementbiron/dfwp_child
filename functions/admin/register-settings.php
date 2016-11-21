@@ -8,19 +8,19 @@
 	 */
 	
 	//A l'initialisation de l'administration
-	add_action('admin_init', 'dfRegisterSettings');
+	add_action('admin_init', 'dfwp_registerSettings');
 	
 	//On enregistre les settings du theme
-	function dfRegisterSettings()
+	function dfwp_registerSettings()
 	{
 		//On enregistre le debug mode
-		register_setting('df_wp', 'debug_mode', 'validDebugMode');
+		register_setting('dfwp_settings', 'debug_mode', 'dfwp_validDebugMode');
 
 		//Maintenance mode
-		register_setting('df_wp', 'maintenance_mode', 'validMaintenanceMode');
+		register_setting('dfwp_settings', 'maintenance_mode', 'dfwp_validMaintenanceMode');
 		
 		//Validation du debug mode
-		function validDebugMode($input){
+		function dfwp_validDebugMode($input){
 			if(empty($input)){
 				return 'prod';
 			}
@@ -34,7 +34,7 @@
 		}
 
 		//Validation du mode de maintenance
-		function validMaintenanceMode($input){
+		function dfwp_validMaintenanceMode($input){
 			if(empty($input)){
 				return 'false';
 			}
@@ -49,10 +49,10 @@
 	}
 	
 	//Lors de la construction du menu d'administration
-	add_action( 'admin_menu', 'dfAdminMenu' );
+	add_action( 'admin_menu', 'dfwp_adminMenu' );
 	
 	//On ajoute une page pour la gestion des settings du theme
-	function dfAdminMenu()
+	function dfwp_adminMenu()
 	{
 		add_menu_page(
 	      'All Options', // le titre de la page
@@ -62,20 +62,20 @@
 		); 
 
 		add_menu_page(
-	      'DFWP Options', // le titre de la page
-	      'DFWP Options',            // le nom de la page dans le menu d'admin
+	      'DFWP options', // le titre de la page
+	      'DFWP options',            // le nom de la page dans le menu d'admin
 	      'administrator',        // le rôle d'utilisateur requis pour voir cette page
-	      'df-wp-options',        // un identifiant unique de la page
-	      'dfSettingsPage'   // le nom d'une fonction qui affichera la page
+	      'dfwp-options',        // un identifiant unique de la page
+	      'dfwp_settingsPage'   // le nom d'une fonction qui affichera la page
 	   );
 	}
 	
 	//La gestion de cette page de settings
-	function dfSettingsPage()
+	function dfwp_settingsPage()
 	{
 		?>
 	   <div class="wrap">
-	      <h2>DF WP Options</h2>
+	      <h2>DFWP Options</h2>
 	 
 	      <form method="post" action="options.php">
 	         <?php
@@ -83,7 +83,7 @@
 	            // pour vous faciliter le travail.
 	            // elle prend en paramètre le nom du groupe d'options
 	            // que nous avons défini plus haut.
-	            settings_fields( 'df_wp' );
+	            settings_fields( 'dfwp_settings' );
 	         ?>
 	 
 	         <table class="form-table">
@@ -91,14 +91,14 @@
 			      <th scope="row"><label for="debug_mode">Debug mode</label></th>
 			      <td>
 			      	<input type="text" id="debug_mode" name="debug_mode"  value="<?php echo get_option( 'debug_mode' ); ?>" />
-			      	<span class="description">var name : debug_mode | value : 'debug' or 'prod'</span>
+			      	<span class="description">debug | prod</span>
 			      </td>
 			   </tr>
 			   <tr valign="top">
 			      <th scope="row"><label for="maitenance_mode">Maintenance mode</label></th>
 			      <td>
 			      	<input type="text" id="maintenance_mode" name="maintenance_mode"  value="<?php echo get_option( 'maintenance_mode' ); ?>" />
-			      	<span class="description">var name : maintenance_mode | value : 'false' or 'true'</span>
+			      	<span class="description">false | true</span>
 			      </td>
 			   </tr>
 	         </table>

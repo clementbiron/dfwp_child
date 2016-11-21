@@ -19,11 +19,11 @@
 	Admin::removeFrenchPonctuationToUploadFiles();
 
 	//Authoriser le svg en format d'upload
-	Admin::addAllowedUploadFileType(
+	/*Admin::addAllowedUploadFileType(
 		array(
 			'svg' => 'image/svg+xml'
 		)
-	);
+	);*/
 
 	//Modifier les formats authorisés dans tinymce
 	Admin::modifyTinyMceBlockFormat('Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5');
@@ -82,8 +82,8 @@
 	Page::hideInAdminByPageTemplate('page-pattern.php','activate_plugins');
 
 	//On ajoute une configuration Tinymce pour ACF
-	add_filter('acf/fields/wysiwyg/toolbars','acfToolbars' );
-	function acfToolbars($toolbars)
+	add_filter('acf/fields/wysiwyg/toolbars','dfwp_acfToolbars' );
+	function dfwp_acfToolbars($toolbars)
 	{
 		// Add a new toolbar called "Very Simple"
 		// - this toolbar has only 1 row of buttons

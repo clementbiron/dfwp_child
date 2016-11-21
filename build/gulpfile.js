@@ -14,6 +14,7 @@ var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var spritesmith = require('gulp.spritesmith');
 var rename = require('gulp-rename');
+var styledown = require('gulp-styledown');
 
 //Config des erreurs
 var notifyError = {
@@ -35,7 +36,6 @@ gulp.task('sprites', function ()
 
 	sprites.forEach(function(el)
 	{
-		console.log(el.name);
 		var spriteData = gulp.src('../src/sprites/'+el.name+'/*.png')
 			.pipe(plumber({
 				errorHandler:notify.onError(notifyError)
@@ -90,6 +90,16 @@ gulp.task('styles',function()
 			.pipe(gulp.dest('../dist/css/'))
 			.pipe(livereload());
 	});
+});
+
+gulp.task('styleguide', function()
+{
+	gulp.src('../src/components/**/*.scss')
+		.pipe(styledown({
+			config: '../styleguide/config.md',
+			filename: 'styleguide.html'
+		}))
+		.pipe(gulp.dest('../styleguide'));
 });
 
 /**

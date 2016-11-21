@@ -12,6 +12,7 @@
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
+    "gulp-styledown": "latest",
     "gulp.spritesmith": "latest"
   },
   "dependencies": {

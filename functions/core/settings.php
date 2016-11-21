@@ -11,14 +11,14 @@
 	use Doublefou\Core\Config;
 	use Doublefou\Helper\Login;
 
-	//Si on a configurer le mode debug dans l'option page
+	//Si on a configuré le mode debug
 	if(get_option('debug_mode') == 'debug' || get_option('debug_mode') == false){
 
 		//On passe en mode debug
 		Config::setMode('debug');
 	}
 
-	//Si on a configurer le mode prod dans l'option page
+	//Si on a configuré le mode prod
 	else if(get_option('debug_mode') == 'prod'){
 
 		//On passe en mode prod
@@ -26,8 +26,8 @@
 	}
 
 	//Template include filter
-	add_filter( 'template_include', 'dfwpchild_page_template', 99 );
-	function dfwpchild_page_template( $template ) {
+	add_filter( 'template_include', 'dfwp_pageTemplate', 99 );
+	function dfwp_pageTemplate( $template ) {
 		
 		//Si on a activé la maintenance
 		if(get_option('maintenance_mode') == 'true'){
@@ -37,11 +37,12 @@
 
 				//On charge le template correspondant
 				$maintenanceTemplate = locate_template( array( 'page-maintenance.php' ) );
-				if ('' != $maintenanceTemplate ){
-					return $maintenanceTemplate ;
+				if ($maintenanceTemplate != ''){
+					return $maintenanceTemplate;
 				}	
 			}
 		}
+
 		return $template;
 	}
 	
