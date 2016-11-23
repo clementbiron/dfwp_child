@@ -1,6 +1,7 @@
-/**
- * Dépendances
- */
+// ****
+// Dépendances
+// ****
+
 //Knacss
 @import '../libs/knacss/sass/knacss.scss';
 
@@ -8,23 +9,32 @@
 @import '../common/mixins.scss';
 
 
-/**
- * Config et vars
- */
+// ****
+//Config
+// ****
 @import 'config.scss';
 
-/**
- * Sprites (à décommenter en fonction de l'utilisation)
- */
+
+// ****
+//Sprites (à décommenter en fonction de l'utilisation)
+// ****
+
 //@import '../sprite/1x/sprite1x.scss';
 //@import '../sprite/2x/sprite2x.scss';
 
 
-/**
- * Styles du projet
- */
+// ****
+//Styles du projet
+// ****
+
 //Importer les élements
-@import '../common/elements.scss';
+@import '../common/elements/fonts.scss';
+@import '../common/elements/inline.scss';
+@import '../common/elements/icons.scss';
+@import '../common/elements/title.scss';
+@import '../common/elements/links.scss';
+@import '../common/elements/buttons.scss';
+@import '../common/elements/form.scss';
 
 //Importer le layout general du projet
 @import '../common/layout/general.scss';
@@ -33,4 +43,4 @@
 @import '../components/exemple/exemple.scss';
 
 //IE support
-@import '../common/ie.scss';
+//@import '../common/ie.scss';

@@ -2,6 +2,7 @@
   "name": "dfwp_child",
   "version": "2.5.0",
   "devDependencies": {
+    "bower": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
@@ -11,8 +12,8 @@
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
-    "gulp-uglify": "latest",
     "gulp-styledown": "latest",
+    "gulp-uglify": "latest",
     "gulp.spritesmith": "latest"
   },
   "dependencies": {
