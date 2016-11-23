@@ -7,8 +7,8 @@
 	 * GESTION DE PAGE DE PERSONNALISATION DU THEME
 	 */
 
-	add_action( 'customize_register', 'themeCustomizeRegister' );
-	function themeCustomizeRegister( $wp_customize ) 
+	add_action( 'customize_register', 'dfwp_themeCustomizeRegister' );
+	function dfwp_themeCustomizeRegister($wp_customize)
 	{
 		//Ajout de la section pour les actalités
 	   /*	$wp_customize->add_section( 'theme_section_actus' , array(

@@ -1,15 +1,17 @@
 <?php
 	/*
-	Template Name: Pattern template
+	Template Name: Styleguide template
 	*/
 
-	get_header();
+	//get_header();
+
+	$pageContent = file_get_contents(__DIR__.'/styleguide/styleguide.html');
+	echo $pageContent;
 ?>
 	<!-- Elements -->
-	<div class="dfwp_pattern_container">
+	<!--<div class="dfwp_pattern_container">
 		<h1 class="dfwp_pattern_h1">Pattern Elements</h1>
-		
-		<!-- Couleurs -->
+
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Couleurs</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -24,7 +26,6 @@
 			</div>
 		</section>
 
-		<!-- Typographie -->
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Typographie</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -39,7 +40,6 @@
 			</div>
 		</section>
 
-		<!-- Styles de textes -->
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Styles de textes</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -54,7 +54,6 @@
 			</div>
 		</section>
 
-		<!-- Titres -->
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Titres</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -70,7 +69,6 @@
 			</div>
 		</section>
 
-		<!-- Boutons -->
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Boutons</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -85,7 +83,6 @@
 			</div>
 		</section>
 
-		<!-- Elements de formulaire -->
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Elements de formulaire</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -100,7 +97,6 @@
 			</div>
 		</section>
 
-		<!-- Icônes & pictos -->
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Icônes & pictos</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -114,13 +110,12 @@
 				</div>
 			</div>
 		</section>
-	</div>
+	</div>-->
 
 	<!-- Composants -->
-	<div class="dfwp_pattern_container">
+	<!--<div class="dfwp_pattern_container">
 		<h1 class="dfwp_pattern_h1">Pattern Composants</h1>
-		
-		<!-- Mon composant 1 -->
+
 		<section class="dfwp_pattern_section">
 			<h2 class="dfwp_pattern_h2">Mon composant 1</h2>	
 			<div class="dfwp_pattern_subsection">
@@ -134,8 +129,8 @@
 				</div>
 			</div>
 		</section>
-	</div>
+	</div>-->
 
 <?php
-	get_footer();
+	//get_footer();
 ?>

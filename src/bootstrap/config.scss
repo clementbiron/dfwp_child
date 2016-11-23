@@ -1,12 +1,10 @@
-/**
- * Config de dfwp_child
- */
+// Config de dfwp_child
 
-/* Lien vers les images */
+// Lien vers les images
 $imageBase: "../dist/img/";
-
-/* Gestion IE versions */
-//@ie-version-to-support: 9;
 
 //Taille par défaut des fonts
 $default-font-size: 14px;
+
+// Gestion IE versions
+//@ie-version-to-support: 9;

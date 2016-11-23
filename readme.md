@@ -7,8 +7,7 @@ Theme enfant de [DFWP](https://github.com/posykrat/dfwp)
 - Ajouter la compression pour les images statiques
 - Ajouter la gestion des sprite svg
 - Ajouter une gestion d'environnement
-- Mettre à jour les mixins en version SASS
-- Renommer la pattern en 'style guide'
+- Mettre à jour les mixins SASS
 
 ----------
 
@@ -19,18 +18,17 @@ A voir ici : [Changelog](https://github.com/posykrat/dfwp_child/blob/master/chan
 
 #### BUILD & SETUP
 
-1. Installer Node & Bower
-2. Dans le dossier build : 
-    `npm install`
-    `bower install`
-5. Configurer Knacss : src/libs/knacss/sass/_config-variables.sass
-6. Configurer le projet : src/bootstrap/config.less
+1. `cd build && npm install && bower install`
+2. Configurer le projet : src/bootstrap/config.scss (vous pouvez surcharger la config de Knacss, liste des vars ici : src/libs/knacss/sass/_config-variables.sass)
+3. Configurer le styleguide styleguide/config.md
+4. Vérifier et corriger si besoin le gulpfile.js
 
 Commandes gulp disponibles :
-	gulp styles 
-	gulp scripts 
-	gulp sprites 
-	gulp : tâche par défaut + watch de gulp sprites, scripts et styles
+`gulp styles`
+`gulp scripts` 
+`gulp sprites` 
+`gulp styleguide` 
+`gulp` (tâches par défaut + watch de gulp sprites, scripts et styles)
 
 ----------
 
@@ -50,14 +48,13 @@ Les sprites 1x et 2x sont générés automatiquement.
 ----------
 
 #### MAINTENANCE
-Le fichier page-maintenance.php est utilisé pour les utilisateurs non loggé si l'option de
-maintenance est activée dans DFWP Options en administration.
-
+Le fichier page-maintenance.php est utilisé pour les utilisateurs non loggé si l'option de maintenance est activée dans DFWP options en administration.
 Le fichier maintenance.css est chargé uniquement pour cette page.
 
 ----------
 
-#### PATTERN
-La pattern library est accessible via www.exemple.com/pattern
+#### STYLEGUIDE
+Créer une page nommée styleguide et l'associé au template pattern
+La pattern est accessible via www.exemple.com/pattern
 Le fichier pattern.css est chargé uniquement pour cette page.
 

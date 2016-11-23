@@ -1,3 +1,9 @@
+# changelog v2.4.0 (23 nov 2016)
+
+- mise à jour de package.json && readme.md
+- ajout de gulp styledown pour générer le styleguide
+- changement du nom de template 'pattern' pour 'styleguide'
+
 # changelog v2.3.0 (8 nov 2016)
 
 - mise à jour de .gitignore et package.json
