@@ -17,7 +17,6 @@
     "gulp.spritesmith": "latest"
   },
   "dependencies": {
-    "time-grunt": "latest"
   },
   "main": "gulpfile.js"
 }
