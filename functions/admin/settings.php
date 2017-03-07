@@ -18,13 +18,6 @@
 	//Supprimer	la ponctuation française des noms de fichiers
 	Admin::removeFrenchPonctuationToUploadFiles();
 
-	//Authoriser le svg en format d'upload
-	/*Admin::addAllowedUploadFileType(
-		array(
-			'svg' => 'image/svg+xml'
-		)
-	);*/
-
 	//Modifier les formats authorisés dans tinymce
 	Admin::modifyTinyMceBlockFormat('Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5');
 
@@ -73,13 +66,13 @@
 	);
 
 	//Passer le bloc yoast en bas
-	Yoast::goBottom();
+	//Yoast::goBottom();
 
 	//Brancher yoast sur acf
-	Yoast::makeACFFriendly();
+	//Yoast::makeACFFriendly();
 
-	//On masque la page pattern pour les roles à partir de editor
-	Page::hideInAdminByPageTemplate('page-pattern.php','activate_plugins');
+	//On masque le styleguide pour les roles à partir de editor
+	Page::hideInAdminByPageTemplate('page-styleguide.php','install_plugins');
 
 	//On ajoute une configuration Tinymce pour ACF
 	add_filter('acf/fields/wysiwyg/toolbars','dfwp_acfToolbars' );
