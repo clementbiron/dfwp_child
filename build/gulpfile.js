@@ -168,6 +168,7 @@ gulp.task('scripts', function ()
             }
         }))
         .pipe(gulp.dest('../dist/js/'))
+        .pipe(livereload());
 });
 
 /**
