@@ -42,5 +42,8 @@
 //Importer les composants
 @import '../components/exemple/exemple.scss';
 
+//Importer les styles de pages
+@import '../pages/home/home.scss';
+
 //IE support
 //@import '../common/ie.scss';

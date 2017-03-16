@@ -1,3 +1,7 @@
+(07 mars 2017)
+- gestion des composants dans le styleguide 
+-  amélioration du fichier gulp
+
 # changelog v2.4.0 (23 nov 2016)
 
 - mise à jour de package.json && readme.md
