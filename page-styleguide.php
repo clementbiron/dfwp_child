@@ -1,9 +1,13 @@
 <?php
+	/*
+	Template Name: Styleguide template
+	*/
+
 	//Le chemin vers le fichier du styleguide généré
 	$htmlPath = __DIR__.'/styleguide/styleguide.html';
 
 	//Si on veut afficher un composant, on change le chemin du fichier
-	$queryComponents =  get_query_var('components');
+	$queryComponents = (isset($_GET['components']) && !empty($_GET['components'])) ? $_GET['components'] : false ;
 	if($queryComponents){
 		$htmlPath = __DIR__.'/styleguide/components/'.$queryComponents.'.html';
 	}
@@ -33,10 +37,14 @@
 	}
 
 	//On charge le svg et on l'insère tout de suite après <body>
-	$svg = file_get_contents(__DIR__.'/src/sprite/sprite.svg');
-	$frag = $doc->createDocumentFragment();
-	$frag->appendXML($svg);
-	$body->insertBefore($frag, $body->firstChild);
+	$svgPath = __DIR__.'/src/sprite/sprite.svg';
+	if(file_exists($svgPath))
+	{
+		$svg = file_get_contents($svgPath);
+		$frag = $doc->createDocumentFragment();
+		$frag->appendXML($svg);
+		$body->insertBefore($frag, $body->firstChild);
+	}
 
 	//Output
 	echo $doc->saveHTML();

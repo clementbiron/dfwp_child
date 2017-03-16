@@ -2,8 +2,8 @@
 
 ### Head
 
-    link(rel="stylesheet" href="../wp-content/themes/petrofor/dist/css/index.css")
-    link(rel="stylesheet" href="../wp-content/themes/petrofor/dist/css/styleguide.css")
+    link(rel="stylesheet" href="../wp-content/themes/dfwp_child/dist/css/index.css")
+    link(rel="stylesheet" href="../wp-content/themes/dfwp_child/dist/css/styleguide.css")
     link(rel='stylesheet' href='https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.css')
     script(src='https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.js')
 
@@ -17,6 +17,8 @@
      a(href="?components=header") Header
      br
      a(href="?components=footer") Footer
+     br
+     a(href="?components=exemple") Exemple
     div(style="margin:20px;" id="dfwp_MenuElement")
      p
       strong Elements
