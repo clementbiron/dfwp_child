@@ -36,14 +36,17 @@
 		$body->setAttribute('class', 'dfwp_StyleGuide-isComposant');
 	}
 
-	//On charge le svg et on l'insère tout de suite après <body>
-	$svgPath = __DIR__.'/src/sprite/sprite.svg';
-	if(file_exists($svgPath))
+	//On charg(e le svg et on l'insère tout de suite après <body>
+	$svgpath = __DIR__.'/src/sprite/sprite.svg';
+	if(is_file($svgpath))
 	{
-		$svg = file_get_contents($svgPath);
-		$frag = $doc->createDocumentFragment();
-		$frag->appendXML($svg);
-		$body->insertBefore($frag, $body->firstChild);
+		$svg = file_get_contents($svgpath);
+		if($svg != false)
+		{
+			$frag = $doc->createDocumentFragment();
+			$frag->appendXML($svg);
+			$body->insertBefore($frag, $body->firstChild);
+		}
 	}
 
 	//Output
