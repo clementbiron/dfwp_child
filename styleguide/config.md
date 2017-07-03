@@ -22,8 +22,6 @@
     div(style="margin:20px;" id="dfwp_MenuElement")
      p
       strong Elements
-     a(href="#buttons") Buttons
-     br
      a(href="#colors") Colors
      br
      a(href="#fonts") Fonts
@@ -32,6 +30,12 @@
      br
      a(href="#inline-style") Inline
      br
+     a(href="#links") Links
+     br
      a(href="#title") Title
+     br
+     a(href="#buttons") Buttons
+     br
+     a(href="#form") Form elements
                     
     div#styleguides(sg-content)
