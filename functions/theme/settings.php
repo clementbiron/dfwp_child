@@ -112,6 +112,7 @@
 	//Add custom query vars for styleguide
 	function dfwp_addQueryVars( $vars ){
 		$vars[] = "components";
+		$vars[] = "bodyclass";
 		return $vars;
 	}
 	add_filter( 'query_vars', 'dfwp_addQueryVars' );

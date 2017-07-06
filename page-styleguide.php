@@ -44,6 +44,13 @@
 		$dfwpMenuElement = $doc->getElementById('dfwp_MenuElement');
 		$dfwpTitleStyleGuide = $doc->getElementById('dfwp_TitleStyleGuide');
 		$body->setAttribute('class', 'dfwp_StyleGuide-isComposant');
+
+		//Si on veut simuler le comportement sur une page en particulier
+		// == avec une class sur le body
+		$queryBodyClass = get_query_var('bodyclass');
+		if($queryBodyClass){
+			$body->setAttribute('class', $body->getAttribute('class').' '.$queryBodyClass);
+		}
 	}
 
 	//Output
