@@ -8,14 +8,18 @@ var TemplateMatcher = new (function()
 	{
 		console.log('TemplateMatcher init() ');
 
-		//Appel d'objets JS en fonction du template hierarchy
-		that.matchTemplate();
+		//On DOM content loaded
+		document.addEventListener("DOMContentLoaded", function()
+		{		
+			//Appel d'objets JS en fonction du template hierarchy
+			that.matchTemplate();
+		});
 	},
 	
 	this.matchTemplate = function ()
 	{
 		//On récupéere le noeud dom <body>
-		var bodyDom = document.getElementsByTagName('body')[0];
+		var bodyDom = document.querySelector('body')
 
 		//On récupère les class sur le body
 		var htmlClass = bodyDom.className;
