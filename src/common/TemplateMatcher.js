@@ -8,14 +8,17 @@ var TemplateMatcher = new (function()
 	{
 		console.log('TemplateMatcher init() ');
 
-		//On DOM content loaded
-		document.addEventListener("DOMContentLoaded", function()
-		{		
-			//Appel d'objets JS en fonction du template hierarchy
-			that.matchTemplate();
-		});
+		//Appel d'objets JS en fonction du template hierarchy
+		if(document.readyState !== 'loading' ) {
+            that.matchTemplate();
+        } else {
+            document.addEventListener('DOMContentLoaded', function () {
+                that.matchTemplate();
+            });
+        }  
 	},
 	
+	//Appel d'objets JS en fonction du template hierarchy
 	this.matchTemplate = function ()
 	{
 		//On récupéere le noeud dom <body>
@@ -38,7 +41,7 @@ var TemplateMatcher = new (function()
 		{
 			//On capitalize la première lettre
 			var value = entry.charAt(0).toUpperCase() + entry.slice(1);
-
+			
 			//On instancie un objet avec la string
 			var currentObject = window[value];
 			
