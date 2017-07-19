@@ -65,9 +65,6 @@
 		)
 	);
 
-	//Passer le bloc yoast en bas
-	Yoast::goBottom();
-
 	//On masque le styleguide pour les roles à partir de editor
 	Page::hideInAdminByPageTemplate('page-styleguide.php','install_plugins');
 
