@@ -22,11 +22,8 @@
 	//Désactiver les EMOJI
 	Theme::disableEmoji();
 
-	//Gestion titre et description
-	Seo::initHeader();
-
-	//Supprimer le footer yoast
-	Yoast::removeFooter();
+	//On ajoute la gestion du <title> par un plugin tiers
+	add_theme_support( 'title-tag' );
 
 	//Chargement des langues
 	//load_theme_textdomain('dfwpchild',get_stylesheet_directory().'/languages');
