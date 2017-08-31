@@ -14,7 +14,9 @@
     "gulp-sass": "latest",
     "gulp-styledown": "latest",
     "gulp-uglify": "latest",
-    "gulp.spritesmith": "latest"
+    "gulp-foreach": "latest",
+    "gulp.spritesmith": "latest",
+    "gulp-foreach": "latest"
   },
   "dependencies": {
   },

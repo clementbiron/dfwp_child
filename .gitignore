@@ -8,7 +8,7 @@ build/node_modules/
 
 # Projects folders #
 ###################
-src/libs/
+#src/libs/
 
 # Composer folders #
 ###################

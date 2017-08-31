@@ -8,7 +8,6 @@
 	 */
 	
 	use Doublefou\Helper\Theme;
-	use Doublefou\Helper\Seo;
 	use Doublefou\Helper\Yoast;
 	use Doublefou\Core\Debug;
 	use Doublefou\Helper\Login;
@@ -22,11 +21,8 @@
 	//Désactiver les EMOJI
 	Theme::disableEmoji();
 
-	//Gestion titre et description
-	Seo::initHeader();
-
-	//Supprimer le footer yoast
-	Yoast::removeFooter();
+	//On ajoute la gestion du <title> par un plugin tiers
+	add_theme_support( 'title-tag' );
 
 	//Chargement des langues
 	//load_theme_textdomain('dfwpchild',get_stylesheet_directory().'/languages');
@@ -108,4 +104,12 @@
 		}
 	}
 	add_action('wp_enqueue_scripts', 'dfwp_enqueueStyle');
+
+	//Add custom query vars for styleguide
+	function dfwp_addQueryVars( $vars ){
+		$vars[] = "components";
+		$vars[] = "bodyclass";
+		return $vars;
+	}
+	add_filter( 'query_vars', 'dfwp_addQueryVars' );
 ?>

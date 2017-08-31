@@ -146,6 +146,7 @@ gulp.task('scripts', function ()
             '../src/common/*.js', //Project files
             '../src/common/**/*.js', //Project files
             '../src/components/**/*.js', //Components js
+            '../src/pages/**/*.js', //Pages js
             '../src/bootstrap/bootstrap.js' //Project bootstrap
         ])
         .pipe(plumber({
