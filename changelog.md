@@ -1,4 +1,4 @@
-# changelog v2.5.0 (31 août 2016)
+# changelog v2.6.0 (31 août 2016)
 - nombres modifications mineurs sur les fichiers php
 - gestion des composants dans le styleguide 
 - amélioration du fichier gulp
