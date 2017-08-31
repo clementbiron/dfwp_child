@@ -9,7 +9,10 @@
     script(src='../wp-content/themes/dfwp_child/dist/js/index.js')
     script(type='text/javascript') Bootstrap.init();
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+<<<<<<< HEAD
     link(href="https://fonts.googleapis.com/css?family=..." rel="stylesheet")
+=======
+>>>>>>> c246276268b8e0a6e1435282f4d34d4d16d26db0
 
 ### Body
 
@@ -26,8 +29,6 @@
     div(style="margin:20px;" id="dfwp_MenuElement")
      p
       strong Elements
-     a(href="#buttons") Buttons
-     br
      a(href="#colors") Colors
      br
      a(href="#fonts") Fonts
@@ -36,6 +37,12 @@
      br
      a(href="#inline-style") Inline
      br
+     a(href="#links") Links
+     br
      a(href="#title") Title
+     br
+     a(href="#buttons") Buttons
+     br
+     a(href="#form") Form elements
                     
     div#styleguides(sg-content)
