@@ -2,12 +2,12 @@
 	/*
 	Template Name: Styleguide template
 	*/
-
+	
 	//Le chemin vers le fichier du styleguide généré
 	$htmlPath = __DIR__.'/styleguide/styleguide.html';
 
 	//Si on veut afficher un composant, on change le chemin du fichier
-	$queryComponents = (isset($_GET['components']) && !empty($_GET['components'])) ? $_GET['components'] : false ;
+	$queryComponents =  get_query_var('components');
 	if($queryComponents){
 		$htmlPath = __DIR__.'/styleguide/components/'.$queryComponents.'.html';
 	}
@@ -17,6 +17,20 @@
 
 	//On récuère le contenu généré du styleguide et on le charge
 	$html = file_get_contents($htmlPath);
+
+	//On charg(e le svg et on l'insère tout de suite après <body>
+	$svgpath = __DIR__.'/src/sprite/sprite.svg';
+	if(is_file($svgpath))
+	{
+		$svg = file_get_contents($svgpath);
+		if($svg != false)
+		{
+			//On ajoute le svg au html après la balise body
+			$html = str_replace("<body class=\"sg\">", "<body class=\"sg\">".$svg, $html); 
+		}
+	}
+
+	//Dom document
 	$doc = new DOMDocument();
 	$doc->loadHTML($html);
 
@@ -34,16 +48,13 @@
 		$dfwpMenuElement = $doc->getElementById('dfwp_MenuElement');
 		$dfwpTitleStyleGuide = $doc->getElementById('dfwp_TitleStyleGuide');
 		$body->setAttribute('class', 'dfwp_StyleGuide-isComposant');
-	}
 
-	//On charge le svg et on l'insère tout de suite après <body>
-	$svgPath = __DIR__.'/src/sprite/sprite.svg';
-	if(file_exists($svgPath))
-	{
-		$svg = file_get_contents($svgPath);
-		$frag = $doc->createDocumentFragment();
-		$frag->appendXML($svg);
-		$body->insertBefore($frag, $body->firstChild);
+		//Si on veut simuler le comportement sur une page en particulier
+		// == avec une class sur le body
+		$queryBodyClass = get_query_var('bodyclass');
+		if($queryBodyClass){
+			$body->setAttribute('class', $body->getAttribute('class').' '.$queryBodyClass);
+		}
 	}
 
 	//Output
