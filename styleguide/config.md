@@ -9,10 +9,7 @@
     script(src='../wp-content/themes/dfwp_child/dist/js/index.js')
     script(type='text/javascript') Bootstrap.init();
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-<<<<<<< HEAD
     link(href="https://fonts.googleapis.com/css?family=..." rel="stylesheet")
-=======
->>>>>>> c246276268b8e0a6e1435282f4d34d4d16d26db0
 
 ### Body
 

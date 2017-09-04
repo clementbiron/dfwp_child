@@ -1,11 +1,8 @@
 <?php
-<<<<<<< HEAD
 	/*
 	Template Name: Styleguide template
 	*/
 	
-=======
->>>>>>> c246276268b8e0a6e1435282f4d34d4d16d26db0
 	//Le chemin vers le fichier du styleguide généré
 	$htmlPath = __DIR__.'/styleguide/styleguide.html';
 
