@@ -71,6 +71,12 @@
 	//On masque le styleguide pour les roles à partir de editor
 	Page::hideInAdminByPageTemplate('page-styleguide.php','install_plugins');
 
+	/* ACF Google Maps API KEY */
+	function dfwp_acf_init() {
+		acf_update_setting('google_api_key', 'APIKEY');
+	}
+	add_action('acf/init', 'dfwp_acf_init');
+
 	//On ajoute une configuration Tinymce pour ACF
 	add_filter('acf/fields/wysiwyg/toolbars','dfwp_acfToolbars' );
 	function dfwp_acfToolbars($toolbars)
