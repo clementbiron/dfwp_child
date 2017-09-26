@@ -8,7 +8,6 @@
 	 */
 	
 	use Doublefou\Helper\Theme;
-	use Doublefou\Helper\Seo;
 	use Doublefou\Helper\Yoast;
 	use Doublefou\Core\Debug;
 	use Doublefou\Helper\Login;

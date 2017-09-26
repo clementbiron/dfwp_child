@@ -1,6 +1,7 @@
-(07 mars 2017)
+# changelog v2.6.0 (31 août 2016)
+- nombres modifications mineurs sur les fichiers php
 - gestion des composants dans le styleguide 
--  amélioration du fichier gulp
+- amélioration du fichier gulp
 
 # changelog v2.4.0 (23 nov 2016)
 

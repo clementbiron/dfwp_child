@@ -9,6 +9,7 @@
     script(src='../wp-content/themes/dfwp_child/dist/js/index.js')
     script(type='text/javascript') Bootstrap.init();
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css?family=..." rel="stylesheet")
 
 ### Body
 
