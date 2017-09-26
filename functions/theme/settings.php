@@ -22,11 +22,8 @@
 	//Désactiver les EMOJI
 	Theme::disableEmoji();
 
-	//Gestion titre et description
-	Seo::initHeader();
-
-	//Supprimer le footer yoast
-	Yoast::removeFooter();
+	//On ajoute la gestion du <title> par un plugin tiers
+	add_theme_support( 'title-tag' );
 
 	//Chargement des langues
 	//load_theme_textdomain('dfwpchild',get_stylesheet_directory().'/languages');
@@ -37,8 +34,8 @@
 	));
 
 	//Chargement des fichiers javascript
-	function dfwp_enqueueScripts() {
-
+	function dfwp_enqueueScripts()
+	{
 		//Le nom du fichier js du projet
 		//dépends du 'mode' choisi en admin
 		$projectJsName = (get_option('debug_mode') == 'prod') ? 'index.min.js' :  'index.js';
@@ -60,8 +57,8 @@
 	add_action('wp_enqueue_scripts', 'dfwp_enqueueScripts');
 
 	//Chargement styles en front
-	function dfwp_enqueueStyle(){
-
+	function dfwp_enqueueStyle()
+	{
 		//Le nom du fichier css du projet
 		//dépends du 'mode' choisi en admin
 		$projectCssName = (get_option('debug_mode') == 'prod') ? 'index.min.css' :  'index.css';
@@ -88,19 +85,19 @@
 		wp_enqueue_style('dfwpchild_index');
 		
 		//Pour la page pattern uniquement
-		if(is_page_Template('page-pattern.php')){
-
+		if(is_page_Template('page-pattern.php'))
+		{
 			//On charge la css qui va bien
 			wp_dequeue_style('dfwpchild_index');
 			wp_enqueue_style('dfwpchild_pattern');
 		}
 
 		//Si la maintenance est activée
-		if(get_option('maintenance_mode') == 'true'){
-
+		if(get_option('maintenance_mode') == 'true')
+		{
 			//Si on est pas sur l'admin, qu'on est pas un utilisateur connecté ou que l'on est pas sur la page de login
-			if(!is_admin() && !is_user_logged_in() && (Login::isLoginPage() == false)){
-
+			if(!is_admin() && !is_user_logged_in() && (Login::isLoginPage() == false))
+			{
 				//On charge la feuille de style de la maintenance
 				wp_dequeue_style('dfwpchild_index');
 				wp_enqueue_style('dfwpchild_maintenance');
@@ -108,4 +105,12 @@
 		}
 	}
 	add_action('wp_enqueue_scripts', 'dfwp_enqueueStyle');
+
+	//Add custom query vars for styleguide
+	function dfwp_addQueryVars( $vars ){
+		$vars[] = "components";
+		$vars[] = "bodyclass";
+		return $vars;
+	}
+	add_filter( 'query_vars', 'dfwp_addQueryVars' );
 ?>

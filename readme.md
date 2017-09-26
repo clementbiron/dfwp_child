@@ -54,7 +54,6 @@ Le fichier maintenance.css est chargé uniquement pour cette page.
 ----------
 
 #### STYLEGUIDE
-Créer une page nommée styleguide et l'associé au template pattern
-La pattern est accessible via www.exemple.com/pattern
-Le fichier pattern.css est chargé uniquement pour cette page.
+Créer une page nommée styleguide et l'associé au template styleguide, accessible via www.exemple.com/styleguide.
+Le fichier styleguide.css est chargé uniquement pour cette page.
 
