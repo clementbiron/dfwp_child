@@ -52,6 +52,10 @@
 
 		//Charger le fichier js du projet
 		wp_enqueue_script('dfwpchild_index');
+
+		//Décharger les scripts non nécéssaires
+		wp_deregister_script('jquery');
+		wp_deregister_script('wp-embed');
 	}
 	add_action('wp_enqueue_scripts', 'dfwp_enqueueScripts');
 
